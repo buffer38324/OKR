@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Okr\Okr.csproj" />
   </ItemGroup>
 
 </Project>

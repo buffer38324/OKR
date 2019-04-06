@@ -10,6 +10,14 @@ namespace OkrLibrary1.Models
         public DateTime Time {get;set;}
         public string Content { get; set; }//内容
         public int Id { get; set; }//任务Id
+
+        public OkrItem(int level, DateTime time, string content, int id)
+        {
+            Level = level;
+            Time = time;
+            Content = content;
+            Id = id;
+        }
     }
 
 }
