@@ -8,7 +8,50 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-      <TextBlock Name="LevelCoutText"/>
-    </Grid>
+    <NavigationView x:Name="MyNavigation"  IsTabStop="False"  PaneTitle="极简菜单" IsSettingsVisible="False" ItemInvoked="MyNavigation_ItemInvoked" Background="#D6E8EE" >
+        <NavigationView.MenuItems >
+            <NavigationViewItem  Content="OKR" Tag="OKRPage" />
+            <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" />
+            <NavigationViewItem  Content="完成进度" Tag=" ProgessPage"/>
+            <NavigationViewItem  Content="日历" Tag="CalendarPage" />
+        </NavigationView.MenuItems>
+        <NavigationView.AutoSuggestBox>
+            <AutoSuggestBox x:Name="MyASB" PlaceholderText="查找任务" QueryIcon="Find" TextChanged="MyASB_TextChanged"
+                            QuerySubmitted="MyASB_QuerySubmitted"  SuggestionChosen="MyASB_SuggestionChosen"/>
+        </NavigationView.AutoSuggestBox>
+        <NavigationView.PaneFooter >
+            <StackPanel Orientation="Horizontal">
+                <PersonPicture ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-stat"/>
+                <AppBarButton Icon="Setting"  Content="设置"  VerticalAlignment="Bottom">
+                    <AppBarButton.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="主题" Name="ThemeButton" Click="ThemeButton_Click"  Tag="Theme"/>
+                            <MenuFlyoutItem Text="反馈与建议" Name="ReviewButton" Click="ReviewButton_Click"  Tag="Review"/>
+                            <MenuFlyoutItem Text="帮助中心" Name="HelpButton" Click="HelpButton_Click" Tag="Help"/>
+                            <MenuFlyoutItem Text="个人中心" Name="CenterButton" Click="CenterButton_Click" Tag="Center"/>
+                            <MenuFlyoutItem Text="分享" Name="ShareButton" Click="ShareButton_Click" Tag="Share"/>
+                        </MenuFlyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+                <TextBlock Name="LevelCoutText" Text="等级：" VerticalAlignment="Bottom" Margin="0,0,0,10px"/>
+            </StackPanel>
+        </NavigationView.PaneFooter>
+        <NavigationView.HeaderTemplate>
+            <DataTemplate>
+                <Grid Margin="24,0,24,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="28" VerticalAlignment="Center" Text="极简生活"/>
+                    <CommandBar Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" DefaultLabelPosition="Right" Background="{x:Null}">
+                        <AppBarButton Label="刷新" Icon="Refresh"/>
+                    </CommandBar>
+                </Grid>
+            </DataTemplate>
+        </NavigationView.HeaderTemplate>
+        <Frame x:Name="contentFrame">
+            <TextBlock Text=" OKR工作法简介" FontSize="20" Margin=" 10,5" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </Frame>
+    </NavigationView>
 </Page>
