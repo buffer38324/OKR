@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okr", "Okr\Okr.csproj", "{68858D92-202F-4A08-81F0-1C8BB150B35E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OkrLibrary1", "OkrLibrary1\OkrLibrary1.csproj", "{3AECA659-EDF2-4A87-9317-36DF5A3A3EC1}"
-	ProjectSection(ProjectDependencies) = postProject
-		{68858D92-202F-4A08-81F0-1C8BB150B35E} = {68858D92-202F-4A08-81F0-1C8BB150B35E}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

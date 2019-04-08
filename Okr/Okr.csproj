@@ -158,6 +158,12 @@
       <Version>4.10.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OkrLibrary1\OkrLibrary1.csproj">
+      <Project>{3aeca659-edf2-4a87-9317-36df5a3a3ec1}</Project>
+      <Name>OkrLibrary1</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
