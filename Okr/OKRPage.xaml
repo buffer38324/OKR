@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox Name="Myfirstplan" Header="开启我的第一个计划"  HorizontalAlignment="Center" 
+        <TextBox Name="Myfirstplan" Header="开启我的第一个计划"   
                  PlaceholderText="请输入您的长远计划" FontSize="46px"
-                 AutomationProperties.Name="multi-line TextBox"
+                 HorizontalAlignment="Center" AutomationProperties.Name="multi-line TextBox"
                  TextWrapping="Wrap" AcceptsReturn="True" 
                  IsSpellCheckEnabled="True" SelectionHighlightColor="Green">
                  
