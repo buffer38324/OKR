@@ -26,8 +26,12 @@ namespace Okr
         {
             this.InitializeComponent();
         }
-
-        private void NextButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 计划首页
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
