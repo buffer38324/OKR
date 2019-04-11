@@ -125,6 +125,9 @@
     <Compile Include="OKRPage.xaml.cs">
       <DependentUpon>OKRPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OKRPlanPage.xaml.cs">
+      <DependentUpon>OKRPlanPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +157,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="OKRPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OKRPlanPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
