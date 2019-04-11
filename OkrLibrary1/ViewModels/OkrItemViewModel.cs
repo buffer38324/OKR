@@ -8,7 +8,7 @@ namespace OkrLibrary1.ViewModels
     class OkrItemViewModel
     {
         public List<List<OkrItem>> AllOkrItems = new List<List<OkrItem>>();
-        public void AddOkrItems(int level, DateTime time, string content, int id)
+        public void AddOkrItems(int level, DateTimeOffset time, string content, int id)
         {
             AllOkrItems[level].Add(new OkrItem(level, time, content, id));
             //这里需要调用service保存

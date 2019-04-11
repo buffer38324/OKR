@@ -10,7 +10,7 @@ namespace OkrLibrary1.Services
     /// </summary>
     public class OkrItemService
     {
-        public void AddOkrItems(int level, DateTime time, string content, int id)
+        /*public void AddOkrItems(int level, DateTimeOffset time, string content, int id)
         {
             OkrItem OkrItem1 = new OkrItem();
             OkrItem1.Level = level;
@@ -19,6 +19,6 @@ namespace OkrLibrary1.Services
             OkrItem1.Time.Date = time.Date;
             OkrItem1.Content = content;
             OkrItem1.Id = id;
-        }
+        }*/
     }
 }
