@@ -104,5 +104,15 @@ namespace Okr
             request.Data.Properties.Title = "分享任务清单";
             request.Data.Properties.Description = "分享任务清单，让小伙伴来监督你吧！ ";
         }
+
+        private void MyNavigation_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MyNavigation_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        {
+
+        }
     }
 }
