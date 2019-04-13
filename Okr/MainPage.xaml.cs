@@ -31,6 +31,16 @@ namespace Okr
             dataTransferManager.DataRequested += DataTransferManager_DataRequested;
         }
 
+        /// <summary>
+        /// 设置常量：把tag的字符串转化成Page类型
+        /// </summary>
+        private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
+{
+            ("OKRPage", typeof(OKRPage)),
+            ("TodoItemPage", typeof(TodoItemPage)),
+            ("ProgessPage", typeof(ProgessPage)),
+            ("CalendarPage", typeof(CalendarPage)),
+        };
         private void MyNavigation_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
 
@@ -114,7 +124,11 @@ namespace Okr
         {
 
         }
-
+        /// <summary>
+        /// 页面加载失败时提示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("加载" + e.SourcePageType.FullName+"页面失败");
