@@ -114,5 +114,10 @@ namespace Okr
         {
 
         }
+
+        private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
+        {
+            throw new Exception("加载" + e.SourcePageType.FullName+"页面失败");
+        }
     }
 }

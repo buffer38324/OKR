@@ -51,8 +51,11 @@
                 </Grid>
             </DataTemplate>
         </NavigationView.HeaderTemplate>
-        <Frame x:Name="contentFrame" Padding="24,0,24,24">
-            <TextBlock Text=" OKR工作法简介" FontSize="20" Margin=" 10,5" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        </Frame>
+        <ScrollViewer>
+            <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"
+                   NavigationFailed="ContentFrame_NavigationFailed">
+                <TextBlock Text=" OKR工作法简介" FontSize="20" Margin=" 10,5" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Frame>
+        </ScrollViewer>
     </NavigationView>
 </Page>
