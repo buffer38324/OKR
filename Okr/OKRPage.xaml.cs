@@ -35,5 +35,10 @@ namespace Okr
         {
             Frame.Navigate(typeof(OKRPlanPage));
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }
