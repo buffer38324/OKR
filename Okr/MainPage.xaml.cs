@@ -74,7 +74,7 @@ namespace Okr
 
         private void ThemeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(OKRPage));
         }
 
         private void ReviewButton_Click(object sender, RoutedEventArgs e)

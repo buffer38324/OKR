@@ -33,7 +33,7 @@ namespace Okr
         /// <param name="e"></param>
         private void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(OKRPlanPage));
         }
     }
 }
