@@ -8,12 +8,5 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <RelativePanel>
-        <TextBlock Name="OKRPlamPageTitle" 
-                   Text="长远计划" FontSize="28px" 
-                   Margin="0,20,0,0"
-                   RelativePanel.AlignHorizontalCenterWithPanel="True">
-
-        </TextBlock>
-    </RelativePanel>
+    <RelativePanel>        <TextBlock Name="OKRPlamPageTitle"                    Text="长远计划" FontSize="28px"                    Margin="0,20,0,0"                   RelativePanel.AlignHorizontalCenterWithPanel="True">        </TextBlock>    </RelativePanel>
 </Page>
