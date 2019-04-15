@@ -17,6 +17,7 @@
             <NavigationViewItem  Content="完成进度" Tag=" ProgessPage"/>
             <NavigationViewItem  Content="日历" Tag="CalendarPage" />
         </NavigationView.MenuItems>
+        
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox x:Name="MyASB" PlaceholderText="查找任务" QueryIcon="Find" TextChanged="MyASB_TextChanged"
                             QuerySubmitted="MyASB_QuerySubmitted"  SuggestionChosen="MyASB_SuggestionChosen"/>
@@ -24,6 +25,7 @@
         <NavigationView.PaneFooter >
             <StackPanel Orientation="Horizontal">
                 <PersonPicture ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-stat"/>
+                
                 <AppBarButton Icon="Setting"  Content="设置" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
                     <AppBarButton.Flyout>
                         <MenuFlyout>
