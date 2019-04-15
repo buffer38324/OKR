@@ -7,15 +7,15 @@ namespace OkrLibrary1.Models
     public class OkrItem
     {
         public int Level { get; set; }//任务的等级
-        public DateTimeOffset Time {get;set;}
-        public string Content { get; set; }//内容
+        public DateTimeOffset Date {get;set;}
+        public string Title { get; set; }//内容
         public int Id { get; set; }//任务Id
 
-        public OkrItem(int level, DateTimeOffset time, string content, int id)
+        public OkrItem(int level, DateTimeOffset date, string title, int id)
         {
             Level = level;
-            Time = time;
-            Content = content;
+            Title = title;
+            Date = date;
             Id = id;
         }
     }
