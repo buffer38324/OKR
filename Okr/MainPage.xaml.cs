@@ -63,35 +63,9 @@ namespace Okr
             sender.Text = args.SelectedItem.ToString();
         }
 
-        private void ThemeButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(OKRPage));
-        }
+        
 
-        private void ReviewButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void HelpButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CenterButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// 启动共享UI
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ShareButton_Click(object sender, RoutedEventArgs e)
-        {
-            DataTransferManager.ShowShareUI();
-        }
+       
 
         /// <summary>
         /// 设置共享内容相关信息
@@ -123,6 +97,36 @@ namespace Okr
         private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("加载" + e.SourcePageType.FullName+"页面失败");
+        }
+
+        private void ThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OKRPage));
+        }
+
+        private void ReviewButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CenterButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 启动共享UI
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+            private void ShareButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataTransferManager.ShowShareUI();
         }
     }
 }

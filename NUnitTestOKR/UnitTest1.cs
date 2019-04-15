@@ -1,5 +1,4 @@
 using NUnitTestOKR.Framework;
-
 namespace Tests
 {
     public class Tests

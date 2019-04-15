@@ -16,15 +16,17 @@
             <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" />
             <NavigationViewItem  Content="完成进度" Tag=" ProgessPage"/>
             <NavigationViewItem  Content="日历" Tag="CalendarPage" />
+            
         </NavigationView.MenuItems>
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox x:Name="MyASB" PlaceholderText="查找任务" QueryIcon="Find" TextChanged="MyASB_TextChanged"
                             QuerySubmitted="MyASB_QuerySubmitted"  SuggestionChosen="MyASB_SuggestionChosen"/>
         </NavigationView.AutoSuggestBox>
         <NavigationView.PaneFooter >
-            <StackPanel Orientation="Horizontal">
-                <PersonPicture ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-stat"/>
-                <AppBarButton Icon="Setting"  Content="设置" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+            <RelativePanel >
+                <PersonPicture x:Name="MyPicture" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-stat" Margin="10,0,0,0" MaxHeight="55"/>
+                <AppBarButton x:Name="Settings" Icon="Setting"  Content="设置" MaxHeight="40"
+                              HorizontalAlignment="Right" VerticalAlignment="Bottom" RelativePanel.RightOf="MyPicture" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" >
                     <AppBarButton.Flyout>
                         <MenuFlyout>
                             <MenuFlyoutItem Text="主题" Name="ThemeButton" Click="ThemeButton_Click"  Tag="Theme"/>
@@ -35,7 +37,7 @@
                         </MenuFlyout>
                     </AppBarButton.Flyout>
                 </AppBarButton>
-            </StackPanel>
+            </RelativePanel>
         </NavigationView.PaneFooter>
         <NavigationView.HeaderTemplate>
             <DataTemplate>
