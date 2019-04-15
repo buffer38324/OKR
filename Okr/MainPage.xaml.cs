@@ -25,17 +25,7 @@ namespace Okr
         /// <summary>
         /// 设置常量：把tag的字符串转化成Page类型
         /// </summary>
-        private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
-{
-            ("OKRPage", typeof(OKRPage)),
-            ("TodoItemPage", typeof(TodoItemPage)),
-            ("ProgessPage", typeof(ProgessPage)),
-            ("CalendarPage", typeof(CalendarPage)),
-        };
-        private void MyNavigation_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
-        {
-
-        }
+      
 
         private void MyASB_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
@@ -128,5 +118,38 @@ namespace Okr
         {
             DataTransferManager.ShowShareUI();
         }
+
+        private void MyNavigation_SelectionChanged(NavigationView sender,NavigationViewSelectionChangedEventArgs args)
+        {
+            if (args.IsSettingsSelected)
+            {
+                ContentFrame.Text = "SettingsPage";
+            }
+            else
+            {
+                NavigationViewItem item =
+                    args.SelectedItem as NavigationViewItem;
+
+                switch (item.Tag)
+                {
+                    case "OKRPage":
+                        Frame.Navigate(typeof(OKRPage));
+                        break;
+
+                    case "TodoItemPage":
+                        Frame.Navigate(typeof(TodoItemPage));
+                        break;
+
+                    case "ProgessPage":
+                        Frame.Navigate(typeof(ProgessPage));
+                        break;
+
+                    case "CalendarPage":
+                        Frame.Navigate(typeof(CalendarPage));
+                        break;
+                }
+            }
+        }
     }
 }
+    
