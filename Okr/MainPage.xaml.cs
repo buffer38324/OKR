@@ -1,6 +1,9 @@
-﻿using Windows.ApplicationModel.DataTransfer;
+﻿using System;
+using System.Collections.Generic;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
