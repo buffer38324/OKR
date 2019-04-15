@@ -91,7 +91,6 @@ namespace Okr
 
         private void ThemeButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRPage));
         }
 
         private void ReviewButton_Click(object sender, RoutedEventArgs e)
@@ -121,34 +120,27 @@ namespace Okr
 
         private void MyNavigation_SelectionChanged(NavigationView sender,NavigationViewSelectionChangedEventArgs args)
         {
-            if (args.IsSettingsSelected)
-            {
-                ContentFrame.Text = "SettingsPage";
-            }
-            else
-            {
                 NavigationViewItem item =
                     args.SelectedItem as NavigationViewItem;
 
                 switch (item.Tag)
                 {
                     case "OKRPage":
-                        Frame.Navigate(typeof(OKRPage));
+                        ContentFrame.Navigate(typeof(OKRPage));
                         break;
 
                     case "TodoItemPage":
-                        Frame.Navigate(typeof(TodoItemPage));
+                        ContentFrame.Navigate(typeof(TodoItemPage));
                         break;
 
                     case "ProgessPage":
-                        Frame.Navigate(typeof(ProgessPage));
+                        ContentFrame.Navigate(typeof(ProgessPage));
                         break;
 
                     case "CalendarPage":
-                        Frame.Navigate(typeof(CalendarPage));
+                        ContentFrame.Navigate(typeof(CalendarPage));
                         break;
                 }
-            }
         }
     }
 }

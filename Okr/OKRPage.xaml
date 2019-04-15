@@ -95,6 +95,5 @@
                 <TextBlock Text="继续" Margin="10, 7, 0, 0"/>
             </StackPanel>
         </HyperlinkButton>
-        <HyperlinkButton Content="Back" x:Name="BackButton" Click="BackButton_Click"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,412,0,0" />
     </RelativePanel>
 </Page>
