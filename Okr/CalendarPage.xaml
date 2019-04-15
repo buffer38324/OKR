@@ -9,6 +9,26 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <RelativePanel>
+            <CalendarView Name="MyDateLook"
+                      SelectionMode="Single"
+                      Width="500"
+                      Height="500"
+                      Margin="70,100"
+                      SelectedDatesChanged="CalendarView_SelectedDatesChanged"
+                      CalendarViewDayItemChanging="MyDateLook_CalendarViewDayItemChanging"/>
+            <TextBlock Name="ListTitle"
+                        FontSize="28"
+                        RelativePanel.RightOf="MyDateLook"
+                        Margin="20,100">
+                <Bold>已有事项:</Bold>
+            </TextBlock>
+            <TextBlock Name="ListMyDates"
+                       RelativePanel.Below="ListTitle"
+                       RelativePanel.RightOf="MyDateLook"
+                       Text="test"
+                       Margin="25,-50"
+                       FontSize="20"/>
+        </RelativePanel>
     </Grid>
 </Page>
