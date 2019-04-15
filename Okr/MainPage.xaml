@@ -16,9 +16,9 @@
             <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" />
             <NavigationViewItem  Content="完成进度" Tag=" ProgessPage"/>
             <NavigationViewItem  Content="日历" Tag="CalendarPage" />
-            
+
         </NavigationView.MenuItems>
-        
+
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox x:Name="MyASB" PlaceholderText="查找任务" QueryIcon="Find" TextChanged="MyASB_TextChanged"
                             QuerySubmitted="MyASB_QuerySubmitted"  SuggestionChosen="MyASB_SuggestionChosen"/>
@@ -26,8 +26,34 @@
         <NavigationView.PaneFooter >
             <RelativePanel >
                 <PersonPicture x:Name="MyPicture" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-stat" Margin="10,0,0,0" MaxHeight="55"/>
-                <AppBarButton x:Name="Settings" Icon="Setting"  Content="设置" MaxHeight="40"
-                              HorizontalAlignment="Right" VerticalAlignment="Bottom" RelativePanel.RightOf="MyPicture" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" >
+                <TextBlock Text="用户名"
+                           x:Name="Client"
+                           FontSize="20"
+                           RelativePanel.RightOf="MyPicture"
+                           HorizontalAlignment="Right"
+                           Margin="20,0,10,-10"
+                           />
+                <TextBlock Text="14"
+                           FontSize="20"
+                           RelativePanel.RightOf="Client"
+                           />
+                <ProgressBar x:Name="PresentGrade"
+                             Width="130"
+                             Value="30"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Right"
+                             RelativePanel.RightOf="MyPicture"
+                             RelativePanel.AlignRightWithPanel="True" 
+                             Margin="20,0,125,-40"/>
+                <AppBarButton x:Name="Settings" 
+                              Icon="Setting"  
+                              Content="设置" 
+                              MaxHeight="40"
+                              HorizontalAlignment="Right" 
+                              VerticalAlignment="Bottom" 
+                              RelativePanel.RightOf="MyPicture" 
+                              RelativePanel.AlignRightWithPanel="True" 
+                              RelativePanel.AlignBottomWithPanel="True" >
                     <AppBarButton.Flyout>
                         <MenuFlyout>
                             <MenuFlyoutItem Text="主题" Name="ThemeButton" Click="ThemeButton_Click"  Tag="Theme"/>
