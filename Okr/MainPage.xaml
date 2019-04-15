@@ -9,8 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <NavigationView x:Name="MyNavigation"  IsTabStop="False"  PaneTitle="极简菜单" 
-                    IsSettingsVisible="False" ItemInvoked="MyNavigation_ItemInvoked" Background="#D6E8EE" 
-                    Loaded="MyNavigation_Loaded" BackRequested="MyNavigation_BackRequested">
+                    IsSettingsVisible="False"  Background="#D6E8EE" 
+                    Loaded="MyNavigation_Loaded" SelectionChanged="MyNavigation_SelectionChanged" BackRequested="MyNavigation_BackRequested">
         <NavigationView.MenuItems >
             <NavigationViewItem  Content="OKR" Tag="OKRPage" />
             <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" />
@@ -80,11 +80,8 @@
                 </Grid>
             </DataTemplate>
         </NavigationView.HeaderTemplate>
-        <ScrollViewer>
-            <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"
-                   NavigationFailed="ContentFrame_NavigationFailed">
-                <TextBlock Text=" OKR工作法简介" FontSize="20" Margin=" 10,5" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            </Frame>
-        </ScrollViewer>
+        <NavigationView.Content>
+            <TextBlock Name="ContentFrame" FontSize="48" />
+        </NavigationView.Content>
     </NavigationView>
 </Page>
