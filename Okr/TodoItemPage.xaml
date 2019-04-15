@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="Okr.TodoItemPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Okr"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Margin="5,10,0,0" Text="任务列表"></TextBlock>
+        <ListView Margin="5,5,0,0" x:Name="PlanList" Grid.Row="1" CanDragItems="True" CanReorderItems="True" AllowDrop="True"
+                  SelectionMode="Multiple" >
+            <ListViewItem>
+                <TextBlock Text="啊啊啊啊啊啊啊啊啊啊啊"></TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock Text="噢噢噢噢噢噢噢噢噢噢噢噢"></TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock Text="呃呃呃呃呃呃呃呃呃呃呃呃"></TextBlock>
+            </ListViewItem>
+        </ListView>
+    </Grid>
+</Page>

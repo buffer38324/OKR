@@ -20,25 +20,11 @@ namespace Okr
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OKRPage : Page
+    public sealed partial class TodoItemPage : Page
     {
-        public OKRPage()
+        public TodoItemPage()
         {
             this.InitializeComponent();
-        }
-        /// <summary>
-        /// 计划首页
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NextPageButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(OKRPlanPage));
-        }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
         }
     }
 }
