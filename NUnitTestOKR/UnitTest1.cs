@@ -1,5 +1,4 @@
-using NUnit.Framework;
-
+using NUnitTestOKR.Framework;
 namespace Tests
 {
     public class Tests
