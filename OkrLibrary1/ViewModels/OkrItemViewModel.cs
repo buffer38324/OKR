@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OkrLibrary1.ViewModels
 {
-    class OkrItemViewModel
+    public class OkrItemViewModel
     {
         public List<OkrItem> AllOkrItems = new List<OkrItem>();
         public void AddOkrItems(int level, DateTimeOffset date, string title, int id)
