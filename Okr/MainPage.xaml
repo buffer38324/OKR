@@ -16,7 +16,6 @@
             <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" />
             <NavigationViewItem  Content="完成进度" Tag=" ProgessPage"/>
             <NavigationViewItem  Content="日历" Tag="CalendarPage" />
-            
         </NavigationView.MenuItems>
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox x:Name="MyASB" PlaceholderText="查找任务" QueryIcon="Find" TextChanged="MyASB_TextChanged"
