@@ -18,6 +18,7 @@
             <NavigationViewItem  Content="日历" Tag="CalendarPage" />
             
         </NavigationView.MenuItems>
+        
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox x:Name="MyASB" PlaceholderText="查找任务" QueryIcon="Find" TextChanged="MyASB_TextChanged"
                             QuerySubmitted="MyASB_QuerySubmitted"  SuggestionChosen="MyASB_SuggestionChosen"/>
