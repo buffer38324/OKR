@@ -131,6 +131,9 @@
     <Compile Include="OKRPlanPage.xaml.cs">
       <DependentUpon>OKRPlanPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OKRTaskPage.xaml.cs">
+      <DependentUpon>OKRTaskPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProgessPage.xaml.cs">
       <DependentUpon>ProgessPage.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ButtonDictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CalendarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +180,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="OKRPlanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OKRTaskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
