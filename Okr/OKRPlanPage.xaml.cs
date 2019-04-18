@@ -26,5 +26,10 @@ namespace Okr
         {
             this.InitializeComponent();
         }
+
+        private void AddNewPlan_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

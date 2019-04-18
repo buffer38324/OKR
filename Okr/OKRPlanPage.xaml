@@ -8,12 +8,37 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <RelativePanel>
+    <RelativePanel x:Name="OKRPlanPanel">
         <TextBlock Name="OKRPlamPageTitle" 
                    Text="长远计划" FontSize="28px" 
-                   Margin="0,20,0,0"
+                   Margin="0,40,0,0"
                    RelativePanel.AlignHorizontalCenterWithPanel="True">
-
         </TextBlock>
+        <TextBox Name="MyFirstPlan" 
+                 Header="计划1"   FontSize="18px" Width="300"
+                 Style="{StaticResource MyTextBox}" 
+                 RelativePanel.Below="OKRPlamPageTitle" 
+                 RelativePanel.AlignHorizontalCenterWith="OKRPlamPageTitle" 
+                 Margin="0,30,0,0"
+                 />
+        <TextBox Name="MySecondPlan" 
+                 Header="计划2"   FontSize="18px" Width="300"
+                 Style="{StaticResource MyTextBox}" 
+                 RelativePanel.Below="MyFirstPlan" 
+                 RelativePanel.AlignHorizontalCenterWith="MyFirstPlan" 
+                 Margin="0,30,0,0"
+                 />
+        <TextBox Name="MyThirdPlan" 
+                 Header="计划3"   FontSize="18px" Width="300"
+                 Style="{StaticResource MyTextBox}" 
+                 RelativePanel.Below="MySecondPlan" 
+                 RelativePanel.AlignHorizontalCenterWith="MySecondPlan" 
+                 Margin="0,30,0,0"
+                 />
+        <AppBarButton x:Name="AddNewPlan" Icon="Add" Margin="0,20,0,0"
+                      Click="AddNewPlan_Click"
+                      RelativePanel.Below="MyThirdPlan" 
+                      RelativePanel.AlignHorizontalCenterWith="MyThirdPlan">
+        </AppBarButton>
     </RelativePanel>
 </Page>
