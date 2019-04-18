@@ -15,6 +15,7 @@ namespace OkrLibrary1.ViewModels
             AllOkrItems.Add(new OkrItem(level, date, title, id));
         }
 
+        //这两个函数需要改
         //返回某天的所有任务
         //返回格式还要改
         public string FindItem(DateTimeOffset date)
@@ -29,7 +30,6 @@ namespace OkrLibrary1.ViewModels
             }
             return MyTitle;
         }
-
         //返回某一天所有任务的level
         public int[] FindLevel(DateTimeOffset date)
         {
