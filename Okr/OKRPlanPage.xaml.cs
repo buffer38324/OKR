@@ -31,5 +31,25 @@ namespace Okr
         {
             
         }
+
+        private void AddTaskButton1_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OKRTaskPage));
+        }
+
+        private void AddTaskButton2_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OKRTaskPage));
+        }
+
+        private void AddTaskButton3_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OKRTaskPage));
+        }
+
+        private void BackToOKRPage_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OKRPage));
+        }
     }
 }
