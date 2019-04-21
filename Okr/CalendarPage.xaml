@@ -12,8 +12,8 @@
         <RelativePanel>
             <CalendarView Name="MyDateLook"
                       SelectionMode="Single"
-                      Width="500"
-                      Height="500"
+                      Width="300"
+                      Height="300"
                       Margin="70,100"
                       SelectedDatesChanged="CalendarView_SelectedDatesChanged"
                       CalendarViewDayItemChanging="MyDateLook_CalendarViewDayItemChanging"/>
