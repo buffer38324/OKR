@@ -19,7 +19,7 @@
         <Image Name="PlanCover"
                Margin="0,100,0,0"
                Source="/Assets/WechatImage.jpg" 
-               Height="200" 
+               Height="250" 
                RelativePanel.AlignHorizontalCenterWithPanel="True"  />
         <TextBox Name="MyLongPlan" 
                  Header="请输入您的长远计划"   FontSize="24px"

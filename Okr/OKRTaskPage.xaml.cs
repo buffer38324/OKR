@@ -26,5 +26,40 @@ namespace Okr
         {
             this.InitializeComponent();
         }
+
+        private void BackToOKRPlanPage_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OKRPlanPage));
+        }
+
+        private void AddNewTask_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Task1Setting_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Task2Setting_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Task3Setting_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddNewTask_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveTask_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

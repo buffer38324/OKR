@@ -51,5 +51,10 @@ namespace Okr
         {
             Frame.Navigate(typeof(OKRPage));
         }
+
+        private void SavePlan_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

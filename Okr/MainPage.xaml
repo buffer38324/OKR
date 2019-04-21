@@ -12,10 +12,10 @@
                     IsSettingsVisible="False"  Background="#D6E8EE" 
                     Loaded="MyNavigation_Loaded" SelectionChanged="MyNavigation_SelectionChanged" BackRequested="MyNavigation_BackRequested">
         <NavigationView.MenuItems >
-            <NavigationViewItem  Content="OKR" Tag="OKRPage" />
-            <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" />
-            <NavigationViewItem  Content="完成进度" Tag=" ProgessPage"/>
-            <NavigationViewItem  Content="日历" Tag="CalendarPage" />
+            <NavigationViewItem  Content="OKR"  Tag="OKRPage" Icon="Flag"/>
+            <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" Icon="GoToToday"  />
+            <NavigationViewItem  Content="完成进度" Tag=" ProgessPage" Icon="Emoji"/>
+            <NavigationViewItem  Content="日历" Tag="CalendarPage" Icon="Calendar" />
 
         </NavigationView.MenuItems>
 
