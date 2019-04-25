@@ -8,22 +8,22 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="#D3E7EE">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="90"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Margin="5,10,0,0" Text="任务列表"></TextBlock>
-        <ListView Margin="5,5,0,0" x:Name="PlanList" Grid.Row="1" CanDragItems="True" CanReorderItems="True" AllowDrop="True"
-                  SelectionMode="Multiple" >
+        <TextBlock Grid.Row="0" Margin="0,30,0,0" Text="今天也是元气满满的一天哦" CharacterSpacing="100" FontSize="28px" IsColorFontEnabled="True" HorizontalAlignment="Center"></TextBlock>
+        <ListView Margin="10,5,0,0" x:Name="PlanList" Grid.Row="1" HorizontalAlignment="Center" CanDragItems="True" CanReorderItems="True" AllowDrop="True"
+                  SelectionMode="Multiple"  >
             <ListViewItem>
-                <TextBlock Text="啊啊啊啊啊啊啊啊啊啊啊"></TextBlock>
+                <TextBlock Text="啊啊啊啊啊啊啊啊啊啊啊" FontSize="20px"></TextBlock>
             </ListViewItem>
             <ListViewItem>
-                <TextBlock Text="噢噢噢噢噢噢噢噢噢噢噢噢"></TextBlock>
+                <TextBlock Text="噢噢噢噢噢噢噢噢噢噢噢噢" FontSize="20px"></TextBlock>
             </ListViewItem>
             <ListViewItem>
-                <TextBlock Text="呃呃呃呃呃呃呃呃呃呃呃呃"></TextBlock>
+                <TextBlock Text="呃呃呃呃呃呃呃呃呃呃呃呃" FontSize="20px"></TextBlock>
             </ListViewItem>
         </ListView>
     </Grid>

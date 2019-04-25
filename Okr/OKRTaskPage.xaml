@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <RelativePanel>
+    <RelativePanel Background="#D3E7EE">
         <StackPanel x:Name="OKRTaskPanel" RelativePanel.AlignHorizontalCenterWithPanel="True"  >
             <TextBlock Name="OKRTaskPageTitle" 
                    Text="添加任务" FontSize="28px" 
