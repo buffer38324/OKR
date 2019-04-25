@@ -95,7 +95,7 @@ namespace Okr
 
         private void ReviewButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
@@ -133,8 +133,8 @@ namespace Okr
                         ContentFrame.Navigate(typeof(TodoItemPage));
                         break;
 
-                    case "ProgessPage":
-                        ContentFrame.Navigate(typeof(ProgessPage));
+                    case "ProgressPage":
+                        ContentFrame.Navigate(typeof(ProgressPage));
                         break;
 
                     case "CalendarPage":

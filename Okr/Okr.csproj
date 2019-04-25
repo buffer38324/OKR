@@ -134,8 +134,8 @@
     <Compile Include="OKRTaskPage.xaml.cs">
       <DependentUpon>OKRTaskPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProgessPage.xaml.cs">
-      <DependentUpon>ProgessPage.xaml</DependentUpon>
+    <Compile Include="ProgressPage.xaml.cs">
+      <DependentUpon>ProgressPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TodoItemPage.xaml.cs">
@@ -187,7 +187,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProgessPage.xaml">
+    <Page Include="ProgressPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
