@@ -20,39 +20,44 @@ namespace Okr
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OKRPlanPage : Page
+    public sealed partial class OKRTaskPage : Page
     {
-        public OKRPlanPage()
+        public OKRTaskPage()
         {
             this.InitializeComponent();
         }
 
-        private void AddNewPlan_Click(object sender, RoutedEventArgs e)
+        private void BackToOKRPlanPage_Click(object sender, RoutedEventArgs e)
         {
-            
+            Frame.Navigate(typeof(OKRPlanPage));
         }
 
-        private void AddTaskButton1_Click(object sender, RoutedEventArgs e)
+        private void AddNewTask_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage));
+
         }
 
-        private void AddTaskButton2_Click(object sender, RoutedEventArgs e)
+        private void Task1Setting_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage));
+
         }
 
-        private void AddTaskButton3_Click(object sender, RoutedEventArgs e)
+        private void Task2Setting_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage));
+
         }
 
-        private void BackToOKRPage_Click(object sender, RoutedEventArgs e)
+        private void Task3Setting_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRPage));
+
         }
 
-        private void SavePlan_Click(object sender, RoutedEventArgs e)
+        private void AddNewTask_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveTask_Click(object sender, RoutedEventArgs e)
         {
 
         }

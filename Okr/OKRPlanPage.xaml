@@ -6,39 +6,68 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="#D3E7EE">
 
-    <RelativePanel x:Name="OKRPlanPanel">
-        <TextBlock Name="OKRPlamPageTitle" 
+    <RelativePanel>
+        <StackPanel x:Name="OKRPlanPanel" RelativePanel.AlignHorizontalCenterWithPanel="True"  >
+            <TextBlock Name="OKRPlamPageTitle" 
                    Text="长远计划" FontSize="28px" 
-                   Margin="0,40,0,0"
-                   RelativePanel.AlignHorizontalCenterWithPanel="True">
-        </TextBlock>
-        <TextBox Name="MyFirstPlan" 
-                 Header="计划1"   FontSize="18px" Width="300"
+                   Margin="0,30,0,0" HorizontalAlignment="Center"
+                   >
+            </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="MyFirstPlan" 
+                 Header="计划1"   FontSize="18px" 
                  Style="{StaticResource MyTextBox}" 
-                 RelativePanel.Below="OKRPlamPageTitle" 
-                 RelativePanel.AlignHorizontalCenterWith="OKRPlamPageTitle" 
-                 Margin="0,30,0,0"
+                 HorizontalAlignment="Center"
                  />
-        <TextBox Name="MySecondPlan" 
-                 Header="计划2"   FontSize="18px" Width="300"
+                <AppBarButton x:Name="AddTaskButton1" Icon="Add"
+                Click="AddTaskButton1_Click"
+                Margin="15,56,0,0">
+                </AppBarButton>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="MySecondPlan" 
+                 Header="计划2"   FontSize="18px" 
                  Style="{StaticResource MyTextBox}" 
-                 RelativePanel.Below="MyFirstPlan" 
-                 RelativePanel.AlignHorizontalCenterWith="MyFirstPlan" 
-                 Margin="0,30,0,0"
                  />
-        <TextBox Name="MyThirdPlan" 
-                 Header="计划3"   FontSize="18px" Width="300"
+                <AppBarButton x:Name="AddTaskButton2" Icon="Add"
+                Click="AddTaskButton2_Click"
+                Margin="15,56,0,0">
+                </AppBarButton>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="MyThirdPlan" 
+                 Header="计划3"   FontSize="18px" 
                  Style="{StaticResource MyTextBox}" 
-                 RelativePanel.Below="MySecondPlan" 
-                 RelativePanel.AlignHorizontalCenterWith="MySecondPlan" 
-                 Margin="0,30,0,0"
                  />
-        <AppBarButton x:Name="AddNewPlan" Icon="Add" Margin="0,20,0,0"
-                      Click="AddNewPlan_Click"
-                      RelativePanel.Below="MyThirdPlan" 
-                      RelativePanel.AlignHorizontalCenterWith="MyThirdPlan">
+                <AppBarButton x:Name="AddTaskButton3" Icon="Add"
+                Click="AddTaskButton3_Click"
+                Margin="15,56,0,0">
+                </AppBarButton>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="AddNewPlan"  Margin="0,24,60,0" Style="{StaticResource MyButton}"
+                      Click="AddNewPlan_Click" 
+                      >
+                    <Button.Resources>
+                        <ResourceDictionary Source="ButtonDictionary1.xaml" />
+                    </Button.Resources>
+                    <TextBlock Text="添加计划" Margin="10, 7, 10, 7"/>
+                </Button>
+                <Button x:Name="SavePlan"  Margin="0,24,0,0"
+                      Click="SavePlan_Click" Style="{StaticResource MyButton}"
+                     >
+                    <Button.Resources>
+                        <ResourceDictionary Source="ButtonDictionary1.xaml" />
+                    </Button.Resources>
+                    <TextBlock Text="保存" Margin="10, 7, 10, 7"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <AppBarButton x:Name="BackToOKRPage" Icon="Back" 
+                      Click="BackToOKRPage_Click" RelativePanel.AlignLeftWith="OKRPlanPanel"
+                      Margin="0,30,0,0">
         </AppBarButton>
     </RelativePanel>
 </Page>
