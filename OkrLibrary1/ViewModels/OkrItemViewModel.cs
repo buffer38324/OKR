@@ -9,10 +9,10 @@ namespace OkrLibrary1.ViewModels
     {
         public List<OkrItem> AllOkrItems = new List<OkrItem>();
         
-        //把Okr任务添加到List
-        public void AddOkrItems(int level, DateTimeOffset date, string title, int id)
+        //如果是叶子节点，调用此函数把Okr任务添加到List
+        public void AddOkrItems(int level, DateTimeOffset date, string title, int id,int need)
         {
-            AllOkrItems.Add(new OkrItem(level, date, title, id));
+            AllOkrItems.Add(new OkrItem(level, date, title, id, need));
         }
 
         //这两个函数需要改
