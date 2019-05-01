@@ -23,9 +23,10 @@ namespace OkrLibrary1.ViewModels
             string MyTitle = "";
             foreach (OkrItem myitem in AllOkrItems)
             {
-                if (date == myitem.Date)
+                if (date.Date == myitem.Date.Date)
                 {
                     MyTitle += myitem.Title;
+                    MyTitle += System.Environment.NewLine;
                 }
             }
             return MyTitle;
@@ -37,7 +38,7 @@ namespace OkrLibrary1.ViewModels
             int i = 0;
             foreach (OkrItem myitem in AllOkrItems)
             {
-                if (date == myitem.Date)
+                if (date.Date == myitem.Date.Date)
                 {
                     MyLevel[i++] = myitem.Level;
                 }
