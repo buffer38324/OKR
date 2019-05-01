@@ -28,14 +28,13 @@ namespace Okr
         {
             this.InitializeComponent();
         }
-        public static OkrItemViewModel VM = new OkrItemViewModel();
-        public OkrItemViewModel ViewModel { get { return VM; } }
+        
         private void CalendarView_SelectedDatesChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
         {
             //加上只能选择今天以后的日期
             if (ListMyDates == null)
                 return;
-            ListMyDates.Text = VM.FindItem(sender.SelectedDates.First());
+            ListMyDates.Text = MainPage.VM.FindItem(sender.SelectedDates.First());
         }
 
         private void MyDateLook_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs args)
@@ -43,7 +42,7 @@ namespace Okr
             //int[] myLevel = MainPage.VM.FindLevel(MyDateLook.SelectedDates.First());
             //foreach(var date in VM.AllDateTime)
             //{
-            int[] myLevel = VM.FindLevel(args.Item.Date);
+            int[] myLevel = MainPage.VM.FindLevel(args.Item.Date);
             List<Color> densityColors = new List<Color>();
             foreach (var level in myLevel)
             {
