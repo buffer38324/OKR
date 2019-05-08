@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <ScrollViewer>
     <RelativePanel Background="#D3E7EE">
         <TextBlock Name="ProgessPageTitle" 
                    Text="完成进度" FontSize="28px" 
@@ -45,7 +45,7 @@
                   RelativePanel.AlignHorizontalCenterWithPanel="True"
                   RelativePanel.Below="SecondTree">
             <TreeView.RootNodes>
-                <TreeViewNode Content="Plan1" IsExpanded="True">
+                <TreeViewNode Content="Plan3" IsExpanded="True">
                     <TreeViewNode.Children>
                         <TreeViewNode Content="Task1"/>
                         <TreeViewNode Content="Task2"/>
@@ -55,4 +55,5 @@
             </TreeView.RootNodes>
         </TreeView>
     </RelativePanel>
+    </ScrollViewer>
 </Page>

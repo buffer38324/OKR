@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <ScrollViewer>
     <RelativePanel Background="#D3E7EE">
         <TextBlock x:Name="OkrPageTitle" 
                    Text="开启我的第一个计划"
@@ -41,4 +41,5 @@
             </StackPanel>
         </Button>
     </RelativePanel>
+    </ScrollViewer>
 </Page>

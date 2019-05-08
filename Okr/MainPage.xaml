@@ -9,15 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <NavigationView x:Name="MyNavigation"  IsTabStop="False"  PaneTitle="极简菜单" 
-                    IsSettingsVisible="False"  Background="#D6E8EE" 
+                    IsSettingsVisible="False"  Background="#D6E8EE" IsBackButtonVisible="Collapsed"
                     Loaded="MyNavigation_Loaded" SelectionChanged="MyNavigation_SelectionChanged" BackRequested="MyNavigation_BackRequested">
         <NavigationView.MenuItems >
-            <NavigationViewItem  Content="OKR"  Tag="OKRPage" Icon="Flag"/>
+            <NavigationViewItem  Content="OKR"  Tag="OKRPage" Icon="Flag" />
             <NavigationViewItem  Content="今日待办" Tag="TodoItemPage" Icon="GoToToday"  />
             <NavigationViewItem  Content="完成进度" Tag="ProgressPage"  Icon="Emoji"/>
             <NavigationViewItem  Content="日历" Tag="CalendarPage" Icon="Calendar" />
         </NavigationView.MenuItems>
-
+        
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox x:Name="MyASB" PlaceholderText="查找任务" QueryIcon="Find" TextChanged="MyASB_TextChanged"
                             QuerySubmitted="MyASB_QuerySubmitted"  SuggestionChosen="MyASB_SuggestionChosen"/>
@@ -79,10 +79,12 @@
                 </Grid>
             </DataTemplate>
         </NavigationView.HeaderTemplate>
-        <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"
+        <ScrollViewer>
+            <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"
                    NavigationFailed="ContentFrame_NavigationFailed">
-            <TextBlock Text=" OKR工作法简介" FontSize="20" Margin=" 10,5" 
+                <TextBlock Text=" OKR工作法简介" FontSize="20" Margin=" 10,5" 
                        HorizontalAlignment="Left" VerticalAlignment="Top" />
-        </Frame>
+            </Frame>
+        </ScrollViewer>
     </NavigationView>
 </Page>

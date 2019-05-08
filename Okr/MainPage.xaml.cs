@@ -113,7 +113,7 @@ namespace Okr
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-            private void ShareButton_Click(object sender, RoutedEventArgs e)
+        private void ShareButton_Click(object sender, RoutedEventArgs e)
         {
             DataTransferManager.ShowShareUI();
         }

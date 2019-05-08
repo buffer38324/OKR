@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <ScrollViewer>
     <RelativePanel Background="#D3E7EE">
         <StackPanel x:Name="OKRTaskPanel" RelativePanel.AlignHorizontalCenterWithPanel="True"  >
             <TextBlock Name="OKRTaskPageTitle" 
@@ -70,4 +70,5 @@
                       Margin="0,30,0,0">
         </AppBarButton>
     </RelativePanel>
+    </ScrollViewer>
 </Page>
