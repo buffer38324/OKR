@@ -9,7 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
     <RelativePanel Background="#D3E7EE">
-        <StackPanel x:Name="OKRTaskPanel" RelativePanel.AlignHorizontalCenterWithPanel="True"  >
+        <StackPanel x:Name="OKRTaskPanel" RelativePanel.AlignHorizontalCenterWithPanel="True">
+            <StackPanel x:Name="OKRTask">
             <TextBlock Name="OKRTaskPageTitle" 
                    Text="添加任务" FontSize="28px" 
                    Margin="0,30,0,0" HorizontalAlignment="Center"
@@ -46,9 +47,10 @@
                 Margin="15,56,0,0">
                 </AppBarButton>
             </StackPanel>
+            </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="AddNewTask"  Margin="0,24,60,0" Style="{StaticResource MyButton}"
-                      Click="AddNewTask_Click_1" 
+                      Click="AddNewTask_Click" 
                       >
                     <Button.Resources>
                         <ResourceDictionary Source="ButtonDictionary1.xaml" />
