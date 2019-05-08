@@ -273,5 +273,10 @@ namespace Okr
         {
 
         }
+
+        private void BackToOKRTaskPage_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OKRTaskPage));
+        }
     }
 }

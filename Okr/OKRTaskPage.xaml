@@ -10,17 +10,16 @@
     <ScrollViewer>
     <RelativePanel Background="#D3E7EE">
         <StackPanel x:Name="OKRTaskPanel" RelativePanel.AlignHorizontalCenterWithPanel="True">
-            <StackPanel x:Name="OKRTask">
+            <StackPanel x:Name="OKRTask" Margin="20,10,0,0">
             <TextBlock Name="OKRTaskPageTitle" 
                    Text="添加任务" FontSize="28px" 
-                   Margin="0,30,0,0" HorizontalAlignment="Center"
+                   HorizontalAlignment="Center"
                    >
             </TextBlock>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" >
                 <TextBox Name="MyFirstTask" 
                  Header="任务1"   FontSize="18px" 
                  Style="{StaticResource MyTextBox}" 
-                 HorizontalAlignment="Center"
                  />
                 <AppBarButton x:Name="Task1Setting" Icon="Edit"
                 Click="Task1Setting_Click"
@@ -49,13 +48,13 @@
             </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="AddNewTask"  Margin="0,24,60,0" Style="{StaticResource MyButton}"
+                <Button x:Name="AddNewTask"  Margin="0,24,50,0" Style="{StaticResource MyButton}"
                       Click="AddNewTask_Click" 
                       >
                     <Button.Resources>
                         <ResourceDictionary Source="ButtonDictionary1.xaml" />
                     </Button.Resources>
-                    <TextBlock Text="添加任务" Margin="10, 7, 10, 7"/>
+                        <TextBlock Text="添加任务" FontSize="18px"  Margin="10, 7, 10, 7"/>
                 </Button>
                 <Button x:Name="SaveTask"  Margin="0,24,0,0"
                       Click="SaveTask_Click" Style="{StaticResource MyButton}"
@@ -63,13 +62,13 @@
                     <Button.Resources>
                         <ResourceDictionary Source="ButtonDictionary1.xaml" />
                     </Button.Resources>
-                    <TextBlock Text="保存" Margin="10, 7, 10, 7"/>
+                        <TextBlock Text="保存" FontSize="18px" Margin="10, 7, 10, 7"/>
                 </Button>
             </StackPanel>
         </StackPanel>
         <AppBarButton x:Name="BackToOKRPlanPage" Icon="Back" 
                       Click="BackToOKRPlanPage_Click" RelativePanel.AlignLeftWith="OKRTaskPanel"
-                      Margin="0,30,0,0">
+                      Margin="0,10,0,0">
         </AppBarButton>
     </RelativePanel>
     </ScrollViewer>
