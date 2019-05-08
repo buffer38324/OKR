@@ -228,5 +228,50 @@ namespace Okr
                 }
             }
         }
+
+        private void Option1CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option2CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option3CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option4CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option5CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option6CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option7CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option1CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option2CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

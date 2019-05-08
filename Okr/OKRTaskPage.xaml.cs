@@ -39,27 +39,27 @@ namespace Okr
 
         private void Task1Setting_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SetItemDays));
         }
 
         private void Task2Setting_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SetItemDays));
         }
 
         private void Task3Setting_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SetItemDays));
         }
 
         private void AddNewTask_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SetItemDays));
         }
 
         private void SaveTask_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SetItemDays));
         }
     }
 }
