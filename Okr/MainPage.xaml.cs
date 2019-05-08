@@ -4,6 +4,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using OkrLibrary1.ViewModels;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -22,10 +23,14 @@ namespace Okr
             dataTransferManager.DataRequested += DataTransferManager_DataRequested;
         }
 
+        //在这放一个New的ModelView
+        public static OkrItemViewModel VM = new OkrItemViewModel();
+        public OkrItemViewModel ViewModel { get { return VM; } }
+
         /// <summary>
         /// 设置常量：把tag的字符串转化成Page类型
         /// </summary>
-      
+
 
         private void MyASB_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {

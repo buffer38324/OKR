@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="Okr.SetItemDays"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Okr"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Background="#D3E7EE">
+        <TextBox PlaceholderText="事件名称"
+                 Header="事件名称"
+                 Margin="20,10,0,0"
+                 HorizontalAlignment="Left"
+                 Width="80"
+                 Name="MyDateName"/>
+        <TextBox PlaceholderText="事件等级"
+                 Header="事件等级"
+                 Margin="20,10,0,0"
+                 HorizontalAlignment="Left"
+                 Width="80"
+                 Name="MyDateLevel"/>
+        <DatePicker Header="Begin"
+                    Name="BeginDate"
+                    Margin="20,10,0,0"
+                    DateChanged="BeginDate_DateChanged">
+            <FlyoutBase.AttachedFlyout>
+                <Flyout>
+                    <TextBlock Text="请选择当前日期之后的日期"  />
+                </Flyout>
+            </FlyoutBase.AttachedFlyout>
+        </DatePicker>
+        <DatePicker Header="End"
+                    Name="EndDate"
+                    Margin="20,10,0,0"
+                    DateChanged="EndDate_DateChanged">
+            <FlyoutBase.AttachedFlyout>
+                <Flyout>
+                    <TextBlock Text="计划至少间隔一天"  />
+                </Flyout>
+            </FlyoutBase.AttachedFlyout>
+        </DatePicker>
+        <StackPanel>
+            <CheckBox x:Name="OptionsAllCheckBox" Content="Select all" IsThreeState="True"
+                                            Checked="OptionsAllCheckBox_Checked" Unchecked="OptionsAllCheckBox_Unchecked"
+                                            Indeterminate="OptionsAllCheckBox_Indeterminate" />
+            <CheckBox x:Name="Option1CheckBox" Content="星期一" Margin="24,0,0,0" Checked="Option1CheckBox_Checked" Unchecked="Option1CheckBox_Unchecked"/>
+            <CheckBox x:Name="Option2CheckBox" Content="星期二" Margin="24,0,0,0" Checked="Option2CheckBox_Checked" Unchecked="Option2CheckBox_Unchecked"/>
+            <CheckBox x:Name="Option3CheckBox" Content="星期三" Margin="24,0,0,0" Checked="Option3CheckBox_Checked"/>
+            <CheckBox x:Name="Option4CheckBox" Content="星期四" Margin="24,0,0,0" Checked="Option4CheckBox_Checked"/>
+            <CheckBox x:Name="Option5CheckBox" Content="星期五" Margin="24,0,0,0" Checked="Option5CheckBox_Checked"/>
+            <CheckBox x:Name="Option6CheckBox" Content="星期六" Margin="24,0,0,0" Checked="Option6CheckBox_Checked"/>
+            <CheckBox x:Name="Option7CheckBox" Content="星期日" Margin="24,0,0,0" Checked="Option7CheckBox_Checked"/>
+        </StackPanel>
+        <Button Content="确认"
+                x:Name="AddConfirm"
+                Click="AddConfirm_Click"/>
+    </StackPanel>
+</Page>
