@@ -37,6 +37,20 @@ namespace Okr
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        public static string now_title = "";
+
+        public class Task
+        {
+            public string name;
+            public bool is_save; 
+            public Task(string Name,bool Is_save)
+            {
+                name = Name;
+                is_save = Is_save;
+            }
+        }
+        List<Task> all_tasks = new List<Task>();
+
         private void AddNewTask_Click(object sender, RoutedEventArgs e)
         {
             //新建文本框和按钮
@@ -49,6 +63,7 @@ namespace Okr
             {
                 Name = "MyPlan",
                 FontSize = 18,
+                //这边一直是任务4
                 Header = "任务4",
                 Style = (Style)Application.Current.Resources["MyTextBox"]
             };
@@ -64,29 +79,47 @@ namespace Okr
             OKRTask.Children.Add(NewStackPanel);
         }
 
+        //这边保存的时候事件名称会出现问题
         private void NewTask1Setting_Click(object sender, RoutedEventArgs e)
         {
+            now_title = "";
             Frame.Navigate(typeof(SetItemDays));
+            all_tasks.Add(new Task(now_title, true));
         }
 
         private void Task1Setting_Click(object sender, RoutedEventArgs e)
         {
+            now_title = "";
             Frame.Navigate(typeof(SetItemDays));
+            now_title = MyFirstTask.Text;
+            all_tasks.Add(new Task(now_title, true));
         }
 
         private void Task2Setting_Click(object sender, RoutedEventArgs e)
         {
+            now_title = "";
             Frame.Navigate(typeof(SetItemDays));
+            now_title = MySecondTask.Text;
+            all_tasks.Add(new Task(now_title, true));
         }
 
         private void Task3Setting_Click(object sender, RoutedEventArgs e)
         {
+            now_title = "";
             Frame.Navigate(typeof(SetItemDays));
+            now_title = MyThirdTask.Text;
+            all_tasks.Add(new Task(now_title, true));
         }
 
         private void SaveTask_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SetItemDays));
+            if(!all_tasks.Exists((Task a)=>a.name==MyFirstTask.Text))
+                Frame.Navigate(typeof(SetItemDays));
+            if (!all_tasks.Exists((Task a) => a.name == MySecondTask.Text))
+                Frame.Navigate(typeof(SetItemDays));
+            if (!all_tasks.Exists((Task a) => a.name == MyThirdTask.Text))
+                Frame.Navigate(typeof(SetItemDays));
+            //Frame.Navigate(typeof(SetItemDays));
         }
     }
 }

@@ -32,9 +32,12 @@ namespace Okr
         int level = 0;
         private void AddConfirm_Click(object sender, RoutedEventArgs e)
         {
-            if (MyDateName.Text == "")
+            /*if (MyDateName.Text == "")
                 title = "Unknown";
-            else title = MyDateName.Text;
+            else title = MyDateName.Text;*/
+            if (OKRTaskPage.now_title == "")
+                title = "Unknown";
+            else title = OKRTaskPage.now_title;
             string nlevel = MyDateLevel.Text.ToString();
             level = int.Parse(nlevel);
             int need = 0;
@@ -148,6 +151,8 @@ namespace Okr
                     MainPage.VM.AddOkrItems(level, today, title, need);
                 today = today.AddDays(1);
             }
+            //返回有问题
+            //Frame.Navigate(typeof(OKRTaskPage));
         }
         private void BeginDate_DateChanged(object sender, DatePickerValueChangedEventArgs e)
         {

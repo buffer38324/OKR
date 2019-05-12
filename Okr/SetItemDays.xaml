@@ -16,10 +16,10 @@
                            HorizontalAlignment="Center"
                    >
                 </TextBlock>
-                <TextBox PlaceholderText="事件名称"
+                <!--<TextBox PlaceholderText="事件名称"
                  Header="事件名称"  FontSize="18px" 
                  Style="{StaticResource MyTextBox}" Margin="20,24,0,0"
-                 Name="MyDateName"/>
+                 Name="MyDateName"/>-->
                 <TextBox PlaceholderText="事件等级"
                  Header="事件等级" FontSize="18px" 
                  Style="{StaticResource MyTextBox}" Margin="20,24,0,0"
