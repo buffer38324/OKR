@@ -12,9 +12,9 @@
             <StackPanel x:Name="OKRPlanPanel" Loaded="OKRPlanPanel_Loaded"
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     >
-                <StackPanel x:Name="OKRPlan" Margin="20,10,0,0">
+                <StackPanel  x:Name="OKRPlan" Margin="20,10,0,0">
                     <TextBlock Name="OKRPlamPageTitle" 
-                   Text="长远计划" FontSize="28px" 
+                    FontSize="28px" 
                    HorizontalAlignment="Center"
                    >
                     </TextBlock>

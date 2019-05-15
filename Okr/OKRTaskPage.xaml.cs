@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OkrLibrary1.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -72,21 +73,32 @@ namespace Okr
         private void Task1Setting_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SetItemDays));
+            var okrItem = new List<OkrItem>();
+            okrItem.Add(new OkrItem(2, DateTimeOffset.Now, MyFirstTask.Text, 3));
         }
 
         private void Task2Setting_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SetItemDays));
+            var okrItem = new List<OkrItem>();
+            okrItem.Add(new OkrItem(2, DateTimeOffset.Now, MySecondTask.Text, 3));
         }
 
         private void Task3Setting_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SetItemDays));
+            var okrItem = new List<OkrItem>();
+            okrItem.Add(new OkrItem(2, DateTimeOffset.Now, MyThirdTask.Text, 3));
         }
 
         private void SaveTask_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SetItemDays));
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            string value1 = (string)e.Parameter;
+            OKRTaskPageTitle.Text = value1;
         }
     }
 }

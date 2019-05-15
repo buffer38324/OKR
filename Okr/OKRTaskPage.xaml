@@ -12,7 +12,7 @@
         <StackPanel x:Name="OKRTaskPanel" RelativePanel.AlignHorizontalCenterWithPanel="True">
             <StackPanel x:Name="OKRTask" Margin="20,10,0,0">
             <TextBlock Name="OKRTaskPageTitle" 
-                   Text="添加任务" FontSize="28px" 
+                    FontSize="28px" 
                    HorizontalAlignment="Center"
                    >
             </TextBlock>

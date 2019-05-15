@@ -1,17 +1,9 @@
-﻿using System;
+﻿using OkrLibrary1.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -33,7 +25,10 @@ namespace Okr
         /// <param name="e"></param>
         private void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRPlanPage));
+            Frame.Navigate(typeof(OKRPlanPage), MyLongPlan.Text);
+            var okrItem = new List<OkrItem>();
+            okrItem.Add(new OkrItem ( 0, DateTimeOffset.Now, MyLongPlan.Text, 3));
+            
         }
     }
 }

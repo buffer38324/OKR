@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OkrLibrary1.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -72,17 +73,23 @@ namespace Okr
 
         private void AddTaskButton1_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage));
+            Frame.Navigate(typeof(OKRTaskPage), MyFirstPlan.Text);
+            var okrItem = new List<OkrItem>();
+            okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyFirstPlan.Text, 3));
         }
 
         private void AddTaskButton2_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage));
+            Frame.Navigate(typeof(OKRTaskPage), MySecondPlan.Text);
+            var okrItem = new List<OkrItem>();
+            okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MySecondPlan.Text, 3));
         }
 
         private void AddTaskButton3_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage));
+            Frame.Navigate(typeof(OKRTaskPage), MyThirdPlan.Text);
+            var okrItem = new List<OkrItem>();
+            okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyThirdPlan.Text, 3));
         }
 
         private void BackToOKRPage_Click(object sender, RoutedEventArgs e)
@@ -97,6 +104,15 @@ namespace Okr
 
         private void OKRPlanPanel_Loaded(object sender, RoutedEventArgs e)
         {
+
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null)
+            {
+                string value = (string)e.Parameter;
+                OKRPlamPageTitle.Text = value;
+            }
             
         }
     }
