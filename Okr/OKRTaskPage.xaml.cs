@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OkrLibrary1.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -100,16 +101,12 @@ namespace Okr
         {
             now_title = "";
             Frame.Navigate(typeof(SetItemDays));
-            now_title = MySecondTask.Text;
-            all_tasks.Add(new Task(now_title, true));
         }
 
         private void Task3Setting_Click(object sender, RoutedEventArgs e)
         {
             now_title = "";
             Frame.Navigate(typeof(SetItemDays));
-            now_title = MyThirdTask.Text;
-            all_tasks.Add(new Task(now_title, true));
         }
 
         private void SaveTask_Click(object sender, RoutedEventArgs e)
@@ -121,6 +118,11 @@ namespace Okr
             if (!all_tasks.Exists((Task a) => a.name == MyThirdTask.Text))
                 Frame.Navigate(typeof(SetItemDays));
             //Frame.Navigate(typeof(SetItemDays));
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            string value1 = (string)e.Parameter;
+            OKRTaskPageTitle.Text = value1;
         }
     }
 }
