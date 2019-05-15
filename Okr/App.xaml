@@ -18,7 +18,7 @@
             <Setter Property="AutomationProperties.Name" Value="Custom appearance"/>
             <Setter Property="Padding" Value="4,-3,4,-3"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="FontWeight" Value="Bold"/>
+            
         </Style>
     </Application.Resources>
 </Application>
