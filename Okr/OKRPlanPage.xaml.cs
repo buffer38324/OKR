@@ -113,7 +113,10 @@ namespace Okr
                 string value = (string)e.Parameter;
                 OKRPlamPageTitle.Text = value;
             }
-            
+            else
+            {
+                
+            }
         }
     }
 }
