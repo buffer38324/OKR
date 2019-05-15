@@ -22,28 +22,28 @@
                  Style="{StaticResource MyTextBox}" 
                  />
                 <AppBarButton x:Name="Task1Setting" Icon="Edit"
-                Click="Task1Setting_Click"
-                Margin="15,56,0,0">
+                Click="Task1Setting_Click" MaxHeight="40"
+                Margin="5,56,0,0">
                 </AppBarButton>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBox Name="MySecondTask" 
-                 Header="计划2"   FontSize="18px" 
+                 Header="任务2"   FontSize="18px" 
                  Style="{StaticResource MyTextBox}" 
                  />
                 <AppBarButton x:Name="Task2Setting" Icon="Edit"
-                Click="Task2Setting_Click"
-                Margin="15,56,0,0">
+                Click="Task2Setting_Click" MaxHeight="40"
+                Margin="5,56,0,0">
                 </AppBarButton>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBox Name="MyThirdTask" 
-                 Header="计划3"   FontSize="18px" 
+                 Header="任务3"   FontSize="18px" 
                  Style="{StaticResource MyTextBox}" 
                  />
                 <AppBarButton x:Name="Task3Setting" Icon="Edit"
-                Click="Task3Setting_Click"
-                Margin="15,56,0,0">
+                Click="Task3Setting_Click" MaxHeight="40"
+                Margin="5,56,0,0">
                 </AppBarButton>
             </StackPanel>
             </StackPanel>

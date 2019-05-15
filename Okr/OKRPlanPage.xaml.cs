@@ -52,8 +52,9 @@ namespace Okr
             AppBarButton AddTaskButton = new AppBarButton
             {
                 Name = "AddTaskButton",
-                Margin = new Thickness(15, 56, 0, 0),
-                Icon = new SymbolIcon(Symbol.Add)
+                Margin = new Thickness(5, 50, 0, 0),
+                Icon = new SymbolIcon(Symbol.Add),
+                MaxHeight=40
             };
             AddTaskButton.Click += AddTaskButton_Click;
             NewStackPanel.Children.Add(MyTextBox);

@@ -25,28 +25,28 @@
                          HorizontalAlignment="Center"
                          />
                         <AppBarButton x:Name="AddTaskButton1" Icon="Add"
-                         Click="AddTaskButton1_Click"
-                         Margin="15,56,0,0">
+                         Click="AddTaskButton1_Click" MaxHeight="40"
+                         Margin="5,50,0,0">
                         </AppBarButton>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBox Name="MySecondPlan" 
-                 Header="计划2"   FontSize="18px" 
-                 Style="{StaticResource MyTextBox}" 
-                 />
+                         Header="计划2"   FontSize="18px" 
+                         Style="{StaticResource MyTextBox}" 
+                        />
                         <AppBarButton x:Name="AddTaskButton2" Icon="Add"
-                Click="AddTaskButton2_Click"
-                Margin="15,56,0,0">
+                        Click="AddTaskButton2_Click" MaxHeight="40"
+                        Margin="5,50,0,0">
                         </AppBarButton>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBox Name="MyThirdPlan" 
-                 Header="计划3"   FontSize="18px" 
-                 Style="{StaticResource MyTextBox}" 
-                />
+                         Header="计划3"   FontSize="18px" 
+                         Style="{StaticResource MyTextBox}" 
+                         />
                         <AppBarButton x:Name="AddTaskButton3" Icon="Add"
-                Click="AddTaskButton3_Click"
-                Margin="15,56,0,0">
+                        Click="AddTaskButton3_Click" MaxHeight="40"
+                        Margin="5,50,0,0">
                         </AppBarButton>
                     </StackPanel>
                 </StackPanel>
