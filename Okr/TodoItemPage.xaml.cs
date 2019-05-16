@@ -26,5 +26,11 @@ namespace Okr
         {
             this.InitializeComponent();
         }
+
+        private void MyToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyToggleButton.Content = "已打卡";
+            MyToggleButton.IsEnabled = false;
+        }
     }
 }

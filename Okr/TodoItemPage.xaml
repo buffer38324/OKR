@@ -25,6 +25,12 @@
             <ListViewItem>
                 <TextBlock Text="呃呃呃呃呃呃呃呃呃呃呃呃" FontSize="20px"></TextBlock>
             </ListViewItem>
+                <ListViewItem>
+                    <ToggleButton Name="MyToggleButton"
+                                  IsThreeState="False"
+                                  Content="打卡"
+                                  Click="MyToggleButton_Click"/>
+                </ListViewItem>
         </ListView>
     </Grid>
     </ScrollViewer>
