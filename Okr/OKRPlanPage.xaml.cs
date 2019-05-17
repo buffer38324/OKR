@@ -29,39 +29,7 @@ namespace Okr
             this.InitializeComponent();
         }
 
-        /// <summary>
-        /// 新建文本框和按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddNewPlan_Click(object sender, RoutedEventArgs e)
-        {
-            //新建文本框和按钮
-            StackPanel NewStackPanel = new StackPanel
-            {
-                Orientation =
-                (Orientation)Enum.Parse(typeof(Orientation), "Horizontal")
-            };
-            TextBox MyTextBox = new TextBox
-            {
-                Name = "MyPlan",
-                FontSize = 18,
-                Header = "计划4",
-                Style = (Style)Application.Current.Resources["MyTextBox"]
-            };
-            AppBarButton AddTaskButton = new AppBarButton
-            {
-                Name = "AddTaskButton",
-                Margin = new Thickness(5, 50, 0, 0),
-                Icon = new SymbolIcon(Symbol.Add),
-                MaxHeight=40
-            };
-            AddTaskButton.Click += AddTaskButton_Click;
-            NewStackPanel.Children.Add(MyTextBox);
-            NewStackPanel.Children.Add(AddTaskButton);
-            OKRPlan.Children.Add(NewStackPanel);
-        }
-
+        
         /// <summary>
         /// 新建计划的添加任务按钮
         /// </summary>

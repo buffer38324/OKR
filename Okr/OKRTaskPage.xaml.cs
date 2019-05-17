@@ -52,35 +52,7 @@ namespace Okr
         }
         List<Task> all_tasks = new List<Task>();
 
-        private void AddNewTask_Click(object sender, RoutedEventArgs e)
-        {
-            //新建文本框和按钮
-            StackPanel NewStackPanel = new StackPanel
-            {
-                Orientation =
-                (Orientation)Enum.Parse(typeof(Orientation), "Horizontal")
-            };
-            TextBox MyTextBox = new TextBox
-            {
-                Name = "MyPlan",
-                FontSize = 18,
-                //这边一直是任务4
-                Header = "任务4",
-                Style = (Style)Application.Current.Resources["MyTextBox"]
-            };
-            AppBarButton NewTask1Setting = new AppBarButton
-            {
-                Name = "AddTaskButton",
-                Margin = new Thickness(5, 56, 0, 0),
-                Icon = new SymbolIcon(Symbol.Edit),
-                MaxHeight=40
-            };
-            NewTask1Setting.Click += NewTask1Setting_Click; ; 
-            NewStackPanel.Children.Add(MyTextBox);
-            NewStackPanel.Children.Add(NewTask1Setting);
-            OKRTask.Children.Add(NewStackPanel);
-        }
-
+        
         //这边保存的时候事件名称会出现问题
         private void NewTask1Setting_Click(object sender, RoutedEventArgs e)
         {

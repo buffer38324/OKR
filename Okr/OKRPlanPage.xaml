@@ -50,24 +50,14 @@
                         </AppBarButton>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="AddNewPlan"  Margin="0,24,60,0" Style="{StaticResource MyButton}"
-                      Click="AddNewPlan_Click" 
-                      >
-                        <Button.Resources>
-                            <ResourceDictionary Source="ButtonDictionary1.xaml" />
-                        </Button.Resources>
-                        <TextBlock Text="添加计划" FontSize="18px" Margin="10, 7, 10, 7"/>
-                    </Button>
-                    <Button x:Name="SavePlan"  Margin="0,24,0,0"
+                <Button x:Name="SavePlan"  Margin="0,24,0,0" HorizontalAlignment="Center"
                       Click="SavePlan_Click" Style="{StaticResource MyButton}"
                      >
-                        <Button.Resources>
-                            <ResourceDictionary Source="ButtonDictionary1.xaml" />
-                        </Button.Resources>
-                        <TextBlock Text="保存" FontSize="18px" Margin="10, 7, 10, 7"/>
-                    </Button>
-                </StackPanel>
+                    <Button.Resources>
+                        <ResourceDictionary Source="ButtonDictionary1.xaml" />
+                    </Button.Resources>
+                    <TextBlock Text="保存" FontSize="18px" Margin="10, 7, 10, 7"/>
+                </Button>
             </StackPanel>
             <AppBarButton x:Name="BackToOKRPage" Icon="Back" 
                       Click="BackToOKRPage_Click" RelativePanel.AlignLeftWith="OKRPlanPanel"
