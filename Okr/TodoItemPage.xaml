@@ -8,30 +8,20 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
-    <Grid Background="#D3E7EE">
+    <Grid Background="#D3E7EE" x:Name="TodoItemGrid" Loaded="TodoItemGrid_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Margin="0,30,0,0" Text="今天也是元气满满的一天哦" CharacterSpacing="100" FontSize="28px" IsColorFontEnabled="True" HorizontalAlignment="Center"></TextBlock>
-        <ListView Margin="10,5,0,0" x:Name="PlanList" Grid.Row="1" HorizontalAlignment="Center" CanDragItems="True" CanReorderItems="True" AllowDrop="True"
-                  SelectionMode="Multiple"  >
-            <ListViewItem>
-                <TextBlock Text="啊啊啊啊啊啊啊啊啊啊啊" FontSize="20px"></TextBlock>
-            </ListViewItem>
-            <ListViewItem>
-                <TextBlock Text="噢噢噢噢噢噢噢噢噢噢噢噢" FontSize="20px"></TextBlock>
-            </ListViewItem>
-            <ListViewItem>
-                <TextBlock Text="呃呃呃呃呃呃呃呃呃呃呃呃" FontSize="20px"></TextBlock>
-            </ListViewItem>
-                <ListViewItem>
-                    <ToggleButton Name="MyToggleButton"
-                                  IsThreeState="False"
-                                  Content="打卡"
-                                  Click="MyToggleButton_Click"/>
-                </ListViewItem>
-        </ListView>
+        <StackPanel  Margin="10,5,0,0" x:Name="ItemList" Grid.Row="1" 
+                   HorizontalAlignment="Center" 
+                   >
+                <ToggleButton Name="MyToggleButton" 
+                              IsThreeState="False"
+                              Content="点击按钮完成打卡"
+                              Click="MyToggleButton_Click"/>
+            </StackPanel>
     </Grid>
     </ScrollViewer>
 </Page>

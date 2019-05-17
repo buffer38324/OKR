@@ -32,5 +32,29 @@ namespace Okr
             MyToggleButton.Content = "已打卡";
             MyToggleButton.IsEnabled = false;
         }
+
+        private void TodoItemGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            DateTimeOffset today = DateTimeOffset.Now;
+            int ItemNum = MainPage.VM.GetItemNum(today.LocalDateTime);
+            string[] ItemToday = MainPage.VM.GetItemToday(today.LocalDateTime);
+            for (int i = 0; i < ItemNum; i++)
+            {
+                ToggleButton ItemButton = new ToggleButton();
+                ItemButton.Name = "Item0";
+                ItemButton.Content = ItemToday[i];
+                ItemButton.Margin = new Thickness(0, 15, 0, 0);
+                ItemButton.IsThreeState = false;
+                ItemButton.Click += ItemButton_Click ;
+                ItemList.Children.Add(ItemButton);
+            }
+        }
+
+        private void ItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton ItemButton = (ToggleButton)sender;
+            ItemButton.Content = ItemButton.Content+ " 已打卡";
+            ItemButton.IsEnabled = false;
+        }
     }
 }

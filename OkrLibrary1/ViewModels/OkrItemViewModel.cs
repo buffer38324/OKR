@@ -31,6 +31,42 @@ namespace OkrLibrary1.ViewModels
             }
             return MyTitle;
         }
+        /// <summary>
+        /// 返回今天的待办任务
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public string[] GetItemToday(DateTimeOffset date)
+        {
+            string[] ItemToday=new string [10];
+            int i = 0;
+            foreach(OkrItem myitem in AllOkrItems)
+            {
+                if(date.Date == myitem.Date.Date)
+                {
+                    ItemToday[i] = myitem.Title;
+                    i++;
+                }
+            }
+            return ItemToday;
+        }
+        /// <summary>
+        /// 获得今日待办任务数
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public int GetItemNum(DateTimeOffset date)
+        {
+            int ItemNum=0;
+            foreach(OkrItem myitem in AllOkrItems)
+            {
+                if(date.Date==myitem.Date.Date)
+                {
+                    ItemNum++;
+                }
+            }
+            return ItemNum;
+        }
         //返回某一天所有任务的level
         public int[] FindLevel(DateTimeOffset date)
         {
