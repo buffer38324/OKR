@@ -25,6 +25,11 @@ namespace Okr
 
         //在这放一个New的ModelView
         public static OkrItemViewModel VM = new OkrItemViewModel();
+        public static string OKRPlamPageTitle;
+        public static string OKRTaskPageTitle;
+        public static string MyFirstTask = "";
+        public static string MySecondTask = "" ;
+        public static string MyThirdTask  = "";
         public OkrItemViewModel ViewModel { get { return VM; } }
 
         /// <summary>

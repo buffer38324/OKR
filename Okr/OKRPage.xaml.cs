@@ -26,6 +26,7 @@ namespace Okr
         private void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(OKRPlanPage), MyLongPlan.Text);
+            MainPage.OKRPlamPageTitle = MyLongPlan.Text;
             var okrItem = new List<OkrItem>();
             okrItem.Add(new OkrItem ( 0, DateTimeOffset.Now, MyLongPlan.Text, 3));
             

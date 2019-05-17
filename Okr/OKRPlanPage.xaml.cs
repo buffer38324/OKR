@@ -76,12 +76,14 @@ namespace Okr
         {
             Frame.Navigate(typeof(OKRTaskPage), MyFirstPlan.Text);
             var okrItem = new List<OkrItem>();
+            MainPage.OKRTaskPageTitle = MyFirstPlan.Text;
             okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyFirstPlan.Text, 3));
         }
 
         private void AddTaskButton2_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(OKRTaskPage), MySecondPlan.Text);
+            MainPage.OKRTaskPageTitle = MySecondPlan.Text;
             var okrItem = new List<OkrItem>();
             okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MySecondPlan.Text, 3));
         }
@@ -89,6 +91,7 @@ namespace Okr
         private void AddTaskButton3_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(OKRTaskPage), MyThirdPlan.Text);
+            MainPage.OKRTaskPageTitle = MyThirdPlan.Text;
             var okrItem = new List<OkrItem>();
             okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyThirdPlan.Text, 3));
         }
@@ -116,7 +119,8 @@ namespace Okr
             }
             else
             {
-                
+                OKRPlamPageTitle.Text = MainPage.OKRPlamPageTitle;
+
             }
         }
     }

@@ -91,6 +91,7 @@ namespace Okr
 
         private void Task1Setting_Click(object sender, RoutedEventArgs e)
         {
+            MainPage.MyFirstTask = MyFirstTask.Text;
             now_title = "";
             Frame.Navigate(typeof(SetItemDays));
             now_title = MyFirstTask.Text;
@@ -99,12 +100,14 @@ namespace Okr
 
         private void Task2Setting_Click(object sender, RoutedEventArgs e)
         {
+            MainPage.MySecondTask = MySecondTask.Text;
             now_title = "";
             Frame.Navigate(typeof(SetItemDays));
         }
 
         private void Task3Setting_Click(object sender, RoutedEventArgs e)
         {
+            MainPage.MyThirdTask = MyThirdTask.Text;
             now_title = "";
             Frame.Navigate(typeof(SetItemDays));
         }
@@ -121,8 +124,19 @@ namespace Okr
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            string value1 = (string)e.Parameter;
-            OKRTaskPageTitle.Text = value1;
+            
+            if(e.Parameter != null)
+            {
+                string value1 = (string)e.Parameter;
+                OKRTaskPageTitle.Text = value1;
+            }
+            else
+            {
+                OKRTaskPageTitle.Text = MainPage.OKRTaskPageTitle;
+                MyFirstTask.Text = MainPage.MyFirstTask;
+                MySecondTask.Text = MainPage.MySecondTask;
+                MyThirdTask.Text = MainPage.MyThirdTask;
+            }
         }
     }
 }
