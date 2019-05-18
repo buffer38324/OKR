@@ -132,6 +132,7 @@ namespace Okr
                     else today1 = today1.AddDays(1);
                 }
             }
+            MainPage.VM.AddNeedItems(title, need);
             DateTimeOffset today = BeginDate.Date;
             while (today <= EndDate.Date)
             {

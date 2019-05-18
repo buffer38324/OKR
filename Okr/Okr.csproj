@@ -210,6 +210,9 @@
     <PackageReference Include="Moq">
       <Version>4.10.1</Version>
     </PackageReference>
+    <PackageReference Include="Telerik.UI.for.UniversalWindowsPlatform">
+      <Version>1.0.1.5</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OkrLibrary1\OkrLibrary1.csproj">

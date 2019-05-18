@@ -5,55 +5,44 @@
     xmlns:local="using:Okr"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:OkrLibrary1.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
     <RelativePanel Background="#D3E7EE">
-        <TextBlock Name="ProgessPageTitle" 
+            <TextBlock Name="ProgessPageTitle" 
                    Text="完成进度" FontSize="28px" 
                    Margin="0,30,0,0" 
                    RelativePanel.AlignHorizontalCenterWithPanel="True"
-                   >
-        </TextBlock>
-        <TreeView x:Name="FirstTree" SelectionMode="Multiple" AllowDrop="True" 
-                  RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,10,0,0"
-                  RelativePanel.Below="ProgessPageTitle">
-            <TreeView.RootNodes>
-                <TreeViewNode Content="Plan1" IsExpanded="True">
-                    <TreeViewNode.Children>
-                        <TreeViewNode Content="Task1"/>
-                        <TreeViewNode Content="Task2"/>
-                        <TreeViewNode Content="task3"/>
-                    </TreeViewNode.Children>
-                </TreeViewNode>
-            </TreeView.RootNodes>
-        </TreeView>
-        <TreeView x:Name="SecondTree" SelectionMode="Multiple" AllowDrop="True" 
-                  RelativePanel.AlignHorizontalCenterWithPanel="True"
-                  RelativePanel.Below="FirstTree">
-            <TreeView.RootNodes>
-                <TreeViewNode Content="Plan2" IsExpanded="True">
-                    <TreeViewNode.Children>
-                        <TreeViewNode Content="Task1"/>
-                        <TreeViewNode Content="Task2"/>
-                        <TreeViewNode Content="task3"/>
-                    </TreeViewNode.Children>
-                </TreeViewNode>
-            </TreeView.RootNodes>
-        </TreeView>
-        <TreeView x:Name="ThirdTree" SelectionMode="Multiple" AllowDrop="True" 
-                  RelativePanel.AlignHorizontalCenterWithPanel="True"
-                  RelativePanel.Below="SecondTree">
-            <TreeView.RootNodes>
-                <TreeViewNode Content="Plan3" IsExpanded="True">
-                    <TreeViewNode.Children>
-                        <TreeViewNode Content="Task1"/>
-                        <TreeViewNode Content="Task2"/>
-                        <TreeViewNode Content="task3"/>
-                    </TreeViewNode.Children>
-                </TreeViewNode>
-            </TreeView.RootNodes>
-        </TreeView>
-    </RelativePanel>
-    </ScrollViewer>
+                   />
+            <TextBlock Name="Tasktitle"
+                   FontSize="20"
+                   Text="任务进度"
+                   RelativePanel.Below="ProgessPageTitle"
+                   Margin="20"/>
+        <ListView x:Name="TasksList"
+                  ItemsSource="{Binding}"
+                  RelativePanel.Below="Tasktitle">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <RelativePanel>
+                        <TextBlock Name="TaskTitle"
+                                   FontSize="18"
+                                   Text="{Binding Title}"/>
+                        <ProgressBar Width="200"
+                                     Value="{Binding Done}"
+                                     Maximum="{Binding Need}"
+                                     RelativePanel.RightOf="TaskTitle"/>
+                    </RelativePanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            <TextBlock Text="最近七天"
+                       Name="DayTitle"
+                       FontSize="20"
+                       RelativePanel.Below="ProgessPageTitle"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Margin="50,20,0,0"/>
+        </RelativePanel>
+</ScrollViewer>
 </Page>

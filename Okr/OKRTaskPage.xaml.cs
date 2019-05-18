@@ -74,6 +74,7 @@ namespace Okr
         {
             MainPage.MySecondTask = MySecondTask.Text;
             now_title = "";
+            now_title = MySecondTask.Text;
             Frame.Navigate(typeof(SetItemDays));
         }
 
@@ -81,6 +82,7 @@ namespace Okr
         {
             MainPage.MyThirdTask = MyThirdTask.Text;
             now_title = "";
+            now_title = MyThirdTask.Text;
             Frame.Navigate(typeof(SetItemDays));
         }
 

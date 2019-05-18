@@ -10,7 +10,7 @@ namespace OkrLibrary1.Models
         public DateTimeOffset Date {get;set;}
         public string Title { get; set; }//内容
         public int Need { get; set; }//任务需要完成几次
-        public int Leave { get; set; }//剩余几次需要完成
+        public int Done { get; set; }//完成几次
         public Boolean Finish_flag { get; set; }//任务是否完成标志，true为完成任务
 
         public OkrItem(int level, DateTimeOffset date, string title,int need)
@@ -19,7 +19,7 @@ namespace OkrLibrary1.Models
             Title = title;
             Date = date;
             Need = need;
-            Leave = need;
+            Done = 0;
             Finish_flag = false;//任务初始化均为未完成
         }
     }

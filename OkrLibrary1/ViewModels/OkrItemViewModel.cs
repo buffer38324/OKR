@@ -8,13 +8,17 @@ namespace OkrLibrary1.ViewModels
     public class OkrItemViewModel
     {
         public List<OkrItem> AllOkrItems = new List<OkrItem>();
+        public List<OkrItem> AllNeeds = new List<OkrItem>();
         
         //如果是叶子节点，调用此函数把Okr任务添加到List
         public void AddOkrItems(int level, DateTimeOffset date, string title,int need)
         {
             AllOkrItems.Add(new OkrItem(level, date, title, need));
         }
-
+        public void AddNeedItems(string title,int need)
+        {
+            AllNeeds.Add(new OkrItem(0, DateTimeOffset.Now, title, need));
+        }
         //这两个函数需要改
         //返回某天的所有任务
         //返回格式还要改
@@ -31,6 +35,35 @@ namespace OkrLibrary1.ViewModels
             }
             return MyTitle;
         }
+
+        //返回某一天需要完成的任务数字
+        public int FintNeed(DateTimeOffset date)
+        {
+            int need = 0;
+            foreach (OkrItem myitem in AllOkrItems)
+            {
+                if (date.Date == myitem.Date.Date)
+                {
+                    need++;
+                }
+            }
+            return need;
+        }
+
+        public int FindDone(DateTimeOffset date)
+        {
+            int done = 0;
+            foreach (OkrItem myitem in AllOkrItems)
+            {
+                if (date.Date == myitem.Date.Date)
+                {
+                    if (myitem.Finish_flag == true)
+                        done++;
+                }
+            }
+            return done;
+        }
+
         //返回某一天所有任务的level
         public int[] FindLevel(DateTimeOffset date)
         {
