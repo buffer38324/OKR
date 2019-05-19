@@ -9,6 +9,7 @@ namespace OkrLibrary1.ViewModels
     {
         public List<OkrItem> AllOkrItems = new List<OkrItem>();
         public List<OkrItem> AllNeeds = new List<OkrItem>();
+        public List<OkrItem> SevenDays = new List<OkrItem>();
         //如果是叶子节点，调用此函数把Okr任务添加到List
         public void AddOkrItems(int level, DateTimeOffset date, string title,int need)
         {
@@ -19,6 +20,35 @@ namespace OkrLibrary1.ViewModels
             AllNeeds.Add(new OkrItem(0, DateTimeOffset.Now, title, need));
         }
 
+        public void AddSevenDays(DateTimeOffset date)
+        {
+            int need = FintNeed(date);
+            int done=FindDone(date);
+            OkrItem myitem = new OkrItem(0, date, "", need);
+            myitem.Done = done;
+            SevenDays.Add(myitem);
+        }
+        public void NewSevenDaysList()
+        {
+            AddSevenDays(DateTimeOffset.Now.AddDays(-6));
+            AddSevenDays(DateTimeOffset.Now.AddDays(-5));
+            AddSevenDays(DateTimeOffset.Now.AddDays(-4));
+            AddSevenDays(DateTimeOffset.Now.AddDays(-3));
+            AddSevenDays(DateTimeOffset.Now.AddDays(-2));
+            AddSevenDays(DateTimeOffset.Now.AddDays(-1));
+            AddSevenDays(DateTimeOffset.Now);
+        }
+
+        public void SetDone(DateTimeOffset date)
+        {
+            foreach(OkrItem myitem in SevenDays)
+            {
+                if(myitem.Date.Date==date.Date)
+                {
+                    myitem.Done++;
+                }
+            }
+        }
         //这两个函数需要改
         //返回某天的所有任务
         //返回格式还要改

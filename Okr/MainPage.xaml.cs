@@ -21,6 +21,7 @@ namespace Okr
             //数据共享
             DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
             dataTransferManager.DataRequested += DataTransferManager_DataRequested;
+            VM.NewSevenDaysList();
         }
 
         //在这放一个New的ModelView

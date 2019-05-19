@@ -28,7 +28,6 @@ namespace Okr
         {
             this.InitializeComponent();
         }
-        
         private void CalendarView_SelectedDatesChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
         {
             //加上只能选择今天以后的日期

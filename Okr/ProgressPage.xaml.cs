@@ -26,6 +26,7 @@ namespace Okr
         {
             this.InitializeComponent();
             TasksList.ItemsSource = MainPage.VM.AllNeeds;
+            SevenDaysList.ItemsSource = MainPage.VM.SevenDays;
         }
     }
 }
