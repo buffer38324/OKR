@@ -67,11 +67,5 @@ namespace Okr
             ItemButton.Content = ItemButton.Content+ " 已打卡";
             ItemButton.IsEnabled = false;
         }
-
-        private void MyToggleButton_Click(object sender, RoutedEventArgs e)
-        {
-            MyToggleButton.Content = "已打卡";
-            MyToggleButton.IsEnabled = false;
-        }
     }
 }
