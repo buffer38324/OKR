@@ -42,26 +42,62 @@ namespace Okr
 
         private void AddTaskButton1_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage), MyFirstPlan.Text);
-            var okrItem = new List<OkrItem>();
-            MainPage.OKRTaskPageTitle = MyFirstPlan.Text;
-            okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyFirstPlan.Text, 3));
+            if(MyFirstPlan.Text == "" && MySecondPlan.Text == "" && MyThirdPlan.Text == "")
+            {
+                Flyout fly = new Flyout();
+                TextBlock flytext = new TextBlock();
+                flytext.Text = "计划名称不能都为空！";
+                fly.Content = flytext;
+                fly.ShowAt(AddTaskButton1);
+            }
+            else
+            {
+                Frame.Navigate(typeof(OKRTaskPage), MyFirstPlan.Text);
+                var okrItem = new List<OkrItem>();
+                MainPage.OKRTaskPageTitle = MyFirstPlan.Text;
+                okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyFirstPlan.Text, 3));
+            }
+            
         }
 
         private void AddTaskButton2_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage), MySecondPlan.Text);
-            MainPage.OKRTaskPageTitle = MySecondPlan.Text;
-            var okrItem = new List<OkrItem>();
-            okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MySecondPlan.Text, 3));
+            if (MyFirstPlan.Text == "" && MySecondPlan.Text == "" && MyThirdPlan.Text == "")
+            {
+                Flyout fly = new Flyout();
+                TextBlock flytext = new TextBlock();
+                flytext.Text = "计划名称不能都为空！";
+                fly.Content = flytext;
+                fly.ShowAt(AddTaskButton2);
+            }
+            else
+            {
+                Frame.Navigate(typeof(OKRTaskPage), MySecondPlan.Text);
+                MainPage.OKRTaskPageTitle = MySecondPlan.Text;
+                var okrItem = new List<OkrItem>();
+                okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MySecondPlan.Text, 3));
+            }
+            
         }
 
         private void AddTaskButton3_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRTaskPage), MyThirdPlan.Text);
-            MainPage.OKRTaskPageTitle = MyThirdPlan.Text;
-            var okrItem = new List<OkrItem>();
-            okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyThirdPlan.Text, 3));
+            if (MyFirstPlan.Text == "" && MySecondPlan.Text == "" && MyThirdPlan.Text == "")
+            {
+                Flyout fly = new Flyout();
+                TextBlock flytext = new TextBlock();
+                flytext.Text = "计划名称不能都为空！";
+                fly.Content = flytext;
+                fly.ShowAt(AddTaskButton3);
+            }
+            else
+            {
+                Frame.Navigate(typeof(OKRTaskPage), MyThirdPlan.Text);
+                MainPage.OKRTaskPageTitle = MyThirdPlan.Text;
+                var okrItem = new List<OkrItem>();
+                okrItem.Add(new OkrItem(1, DateTimeOffset.Now, MyThirdPlan.Text, 3));
+            }
+            
         }
 
         private void BackToOKRPage_Click(object sender, RoutedEventArgs e)
