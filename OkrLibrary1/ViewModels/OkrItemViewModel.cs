@@ -125,23 +125,7 @@ namespace OkrLibrary1.ViewModels
             }
             return ItemToday;
         }
-        /// <summary>
-        /// 获得今日待办任务数
-        /// </summary>
-        /// <param name="date"></param>
-        /// <returns></returns>
-        public int GetItemNum(DateTimeOffset date)
-        {
-            int ItemNum=0;
-            foreach(OkrItem myitem in AllOkrItems)
-            {
-                if(date.Date==myitem.Date.Date)
-                {
-                    ItemNum++;
-                }
-            }
-            return ItemNum;
-        }
+        
         //返回某一天所有任务的level
         public int[] FindLevel(DateTimeOffset date)
         {

@@ -27,16 +27,12 @@ namespace Okr
             this.InitializeComponent();
         }
 
-        private void MyToggleButton_Click(object sender, RoutedEventArgs e)
-        {
-            MyToggleButton.Content = "已打卡";
-            MyToggleButton.IsEnabled = false;
-        }
+        
 
         private void TodoItemGrid_Loaded(object sender, RoutedEventArgs e)
         {
             DateTimeOffset today = DateTimeOffset.Now;
-            int ItemNum = MainPage.VM.GetItemNum(today.LocalDateTime);
+            int ItemNum = MainPage.VM.FintNeed(today.LocalDateTime);
             string[] ItemToday = MainPage.VM.GetItemToday(today.LocalDateTime);
             for (int i = 0; i < ItemNum; i++)
             {
@@ -69,6 +65,12 @@ namespace Okr
             }
             ItemButton.Content = ItemButton.Content+ " 已打卡";
             ItemButton.IsEnabled = false;
+        }
+
+        private void MyToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyToggleButton.Content = "已打卡";
+            MyToggleButton.IsEnabled = false;
         }
     }
 }
