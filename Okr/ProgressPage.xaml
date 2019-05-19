@@ -43,7 +43,7 @@
                        FontSize="20"
                        RelativePanel.Below="ProgessPageTitle"
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
-                       Margin="50,20,0,0"/>
+                       Margin="150,20,0,0"/>
             <ListView x:Name="SevenDaysList"
                       ItemsSource="{Binding}"
                       RelativePanel.Below="DayTitle"
@@ -54,7 +54,9 @@
                             <TextBlock Name="TaskDate"
                                    FontSize="18"
                                    Text="{Binding Date.Date}"
-                                       Width="85"/>
+                                       Width="85"
+                                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                       Margin="150,0,0,0"/>
                             <ProgressBar Width="200"
                                      Value="{Binding Done}"
                                      Maximum="{Binding Need}"

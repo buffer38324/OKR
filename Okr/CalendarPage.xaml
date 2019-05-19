@@ -26,7 +26,6 @@
             <TextBlock Name="ListMyDates"
                        RelativePanel.Below="ListTitle"
                        RelativePanel.RightOf="MyDateLook"
-                       Text="test"
                        Margin="25,-50"
                        FontSize="20"/>
         </RelativePanel>
