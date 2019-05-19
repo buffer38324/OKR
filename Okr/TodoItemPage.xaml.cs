@@ -62,6 +62,7 @@ namespace Okr
                 TextBlock flytext = new TextBlock();
                 flytext.Text = "该任务已经打过卡了";
                 fly.Content = flytext;
+                fly.ShowAt(ItemButton);
             }
             ItemButton.Content = ItemButton.Content+ " 已打卡";
             ItemButton.IsEnabled = false;
