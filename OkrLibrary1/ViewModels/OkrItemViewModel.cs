@@ -22,10 +22,11 @@ namespace OkrLibrary1.ViewModels
 
         public void AddSevenDays(DateTimeOffset date)
         {
+            //不设初始值默认都是0
             int need = FintNeed(date);
-            int done=FindDone(date);
+            //int done=FindDone(date);
             OkrItem myitem = new OkrItem(0, date, "", need);
-            myitem.Done = done;
+            //myitem.Done = done;
             SevenDays.Add(myitem);
         }
         public void NewSevenDaysList()

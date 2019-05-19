@@ -32,7 +32,8 @@
                         <ProgressBar Width="200"
                                      Value="{Binding Done}"
                                      Maximum="{Binding Need}"
-                                     RelativePanel.RightOf="TaskTitle"/>
+                                     RelativePanel.RightOf="TaskTitle"
+                                     Margin="0,10,0,0"/>
                     </RelativePanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -52,11 +53,13 @@
                         <RelativePanel>
                             <TextBlock Name="TaskDate"
                                    FontSize="18"
-                                   Text="{Binding Date.Date}"/>
+                                   Text="{Binding Date.Date}"
+                                       Width="85"/>
                             <ProgressBar Width="200"
                                      Value="{Binding Done}"
                                      Maximum="{Binding Need}"
-                                     RelativePanel.RightOf="TaskDate"/>
+                                     RelativePanel.RightOf="TaskDate"
+                                         Margin="0,10,0,0"/>
                         </RelativePanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
