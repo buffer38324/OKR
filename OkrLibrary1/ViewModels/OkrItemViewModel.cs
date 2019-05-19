@@ -24,9 +24,9 @@ namespace OkrLibrary1.ViewModels
         {
             //不设初始值默认都是0
             int need = FintNeed(date);
-            //int done=FindDone(date);
+            int done=FindDone(date);
             OkrItem myitem = new OkrItem(0, date, "", need);
-            //myitem.Done = done;
+            myitem.Done = done;
             SevenDays.Add(myitem);
         }
         public void NewSevenDaysList()
@@ -50,6 +50,17 @@ namespace OkrLibrary1.ViewModels
                 }
             }
         }
+
+        public void SetFlag(string title)
+        {
+            DateTimeOffset date = DateTimeOffset.Now;
+            foreach(OkrItem myitem in AllOkrItems)
+            {
+                if (myitem.Date.Date == date.Date && myitem.Title == title)
+                    myitem.Finish_flag = true;
+            }
+        }
+
         //这两个函数需要改
         //返回某天的所有任务
         //返回格式还要改
@@ -144,6 +155,16 @@ namespace OkrLibrary1.ViewModels
                 }
             }
             return MyLevel;
+        }
+
+        //打卡调用的函数
+        public void TaskProcessGo(string title)
+        {
+            foreach (OkrItem myitem in AllNeeds)
+            {
+                if (title == myitem.Title)
+                    myitem.Done++;
+            }
         }
 
         public int Monitor(ClientItem clientItem)

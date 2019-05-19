@@ -25,6 +25,8 @@ namespace Okr
         public ProgressPage()
         {
             this.InitializeComponent();
+            MainPage.VM.SevenDays.Clear();
+            MainPage.VM.NewSevenDaysList();
             TasksList.ItemsSource = MainPage.VM.AllNeeds;
             SevenDaysList.ItemsSource = MainPage.VM.SevenDays;
         }

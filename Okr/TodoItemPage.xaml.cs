@@ -53,6 +53,9 @@ namespace Okr
         private void ItemButton_Click(object sender, RoutedEventArgs e)
         {
             ToggleButton ItemButton = (ToggleButton)sender;
+            MainPage.VM.TaskProcessGo(ItemButton.Content.ToString());
+            MainPage.VM.SetDone(DateTimeOffset.Now);
+            MainPage.VM.SetFlag(ItemButton.Content.ToString());
             ItemButton.Content = ItemButton.Content+ " 已打卡";
             ItemButton.IsEnabled = false;
         }
