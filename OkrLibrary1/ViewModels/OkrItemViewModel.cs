@@ -167,6 +167,18 @@ namespace OkrLibrary1.ViewModels
             }
         }
 
+        //判断打过卡没有
+        public bool JudgeFlag(string title)
+        {
+            bool flag=false;
+            DateTimeOffset date = DateTimeOffset.Now;
+            foreach (OkrItem myitem in AllOkrItems)
+            {
+                if (myitem.Date.Date == date.Date && myitem.Title == title)
+                    flag = myitem.Finish_flag;
+            }
+            return flag;
+        }
         public int Monitor(ClientItem clientItem)
         {
             //用来监测是否有任务完成

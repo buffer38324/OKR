@@ -53,9 +53,20 @@ namespace Okr
         private void ItemButton_Click(object sender, RoutedEventArgs e)
         {
             ToggleButton ItemButton = (ToggleButton)sender;
-            MainPage.VM.TaskProcessGo(ItemButton.Content.ToString());
-            MainPage.VM.SetDone(DateTimeOffset.Now);
-            MainPage.VM.SetFlag(ItemButton.Content.ToString());
+            bool flag = MainPage.VM.JudgeFlag(ItemButton.Content.ToString());
+            if(!flag)
+            {
+                MainPage.VM.TaskProcessGo(ItemButton.Content.ToString());
+                MainPage.VM.SetDone(DateTimeOffset.Now);
+                MainPage.VM.SetFlag(ItemButton.Content.ToString());
+            }
+            else
+            {
+                Flyout fly = new Flyout();
+                TextBlock flytext = new TextBlock();
+                flytext.Text = "该任务已经打过卡了";
+                fly.Content = flytext;
+            }
             ItemButton.Content = ItemButton.Content+ " 已打卡";
             ItemButton.IsEnabled = false;
         }
