@@ -25,10 +25,25 @@ namespace Okr
         /// <param name="e"></param>
         private void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OKRPlanPage), MyLongPlan.Text);
-            MainPage.OKRPlamPageTitle = MyLongPlan.Text;
-            var okrItem = new List<OkrItem>();
-            okrItem.Add(new OkrItem ( 0, DateTimeOffset.Now, MyLongPlan.Text, 3));
+            MainPage.MyFirstTask = "";
+            MainPage.MySecondTask = "";
+            MainPage.MyThirdTask = "";
+            if(MyLongPlan.Text == "")
+            {
+                Flyout fly = new Flyout();
+                TextBlock flytext = new TextBlock();
+                flytext.Text = "计划名称不能为空！";
+                fly.Content = flytext;
+                fly.ShowAt(NextPageButton);
+            }
+            else
+            {
+                Frame.Navigate(typeof(OKRPlanPage), MyLongPlan.Text);
+                MainPage.OKRPlamPageTitle = MyLongPlan.Text;
+                var okrItem = new List<OkrItem>();
+                okrItem.Add(new OkrItem(0, DateTimeOffset.Now, MyLongPlan.Text, 3));
+            }
+            
             
         }
     }
