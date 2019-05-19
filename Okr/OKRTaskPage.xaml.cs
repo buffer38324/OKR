@@ -88,12 +88,12 @@ namespace Okr
 
         private void SaveTask_Click(object sender, RoutedEventArgs e)
         {
-            if(!all_tasks.Exists((Task a)=>a.name==MyFirstTask.Text))
+            /*if(!all_tasks.Exists((Task a)=>a.name==MyFirstTask.Text))
                 Frame.Navigate(typeof(SetItemDays));
             if (!all_tasks.Exists((Task a) => a.name == MySecondTask.Text))
                 Frame.Navigate(typeof(SetItemDays));
             if (!all_tasks.Exists((Task a) => a.name == MyThirdTask.Text))
-                Frame.Navigate(typeof(SetItemDays));
+                Frame.Navigate(typeof(SetItemDays));*/
             //Frame.Navigate(typeof(SetItemDays));
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
