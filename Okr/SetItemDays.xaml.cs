@@ -35,6 +35,44 @@ namespace Okr
             /*if (MyDateName.Text == "")
                 title = "Unknown";
             else title = MyDateName.Text;*/
+            if(MyDateLevel.Text=="")
+            {
+                Flyout fly1 = new Flyout();
+                TextBlock fly1text = new TextBlock();
+                fly1text.Text = "请输入任务等级";
+                fly1.Content = fly1text;
+                fly1.ShowAt(MyDateLevel);
+                return;
+            }
+            if(Option1CheckBox.IsChecked==false&& Option2CheckBox.IsChecked == false && Option3CheckBox.IsChecked == false &&
+                Option4CheckBox.IsChecked == false && Option5CheckBox.IsChecked == false && Option6CheckBox.IsChecked == false &&
+                Option7CheckBox.IsChecked == false)
+            {
+                Flyout fly2 = new Flyout();
+                TextBlock fly2text = new TextBlock();
+                fly2text.Text = "请选择任务时间";
+                fly2.Content = fly2text;
+                fly2.ShowAt(OptionsAllCheckBox);
+                return;
+            }
+            /*if (BeginDate.Date < DateTimeOffset.Now)
+            {
+                Flyout fly3 = new Flyout();
+                TextBlock fly3text = new TextBlock();
+                fly3text.Text = "请选择当前日期之后的日期";
+                fly3.Content = fly3text;
+                fly3.ShowAt(OptionsAllCheckBox);
+                return;
+            }*/
+            if (EndDate.Date < BeginDate.Date)
+            {
+                Flyout fly4 = new Flyout();
+                TextBlock fly4text = new TextBlock();
+                fly4text.Text = "请选择开始日期之后的日期";
+                fly4.Content = fly4text;
+                fly4.ShowAt(OptionsAllCheckBox);
+                return;
+            }
             if (OKRTaskPage.now_title == "")
                 title = "Unknown";
             else title = OKRTaskPage.now_title;
@@ -152,6 +190,11 @@ namespace Okr
                     MainPage.VM.AddOkrItems(level, today, title, need);
                 today = today.AddDays(1);
             }
+            Flyout fly = new Flyout();
+            TextBlock flytext = new TextBlock();
+            flytext.Text = "保存成功";
+            fly.Content = flytext;
+            fly.ShowAt(AddConfirm);
             //返回有问题
             //Frame.Navigate(typeof(OKRTaskPage));
         }
@@ -160,17 +203,14 @@ namespace Okr
             if (BeginDate.Date < DateTimeOffset.Now)
             {
                 FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
-
-                //添加锁定，不能让他成功
             }
         }
 
         private void EndDate_DateChanged(object sender, DatePickerValueChangedEventArgs e)
         {
-            if (EndDate.Date < BeginDate.Date || EndDate.Date == BeginDate.Date)
+            if (EndDate.Date < BeginDate.Date)
             {
-                FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
-                //添加锁定+1
+                //FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
                 //等于有问题
             }
         }

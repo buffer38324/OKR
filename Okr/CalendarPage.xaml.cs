@@ -30,7 +30,15 @@ namespace Okr
         }
         private void CalendarView_SelectedDatesChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
         {
-            //加上只能选择今天以后的日期
+            /*if(sender.SelectedDates.First()<DateTimeOffset.Now)
+            {
+                Flyout fly = new Flyout();
+                TextBlock flytext = new TextBlock();
+                flytext.Text = "请选择今天之后的日期";
+                fly.Content = flytext;
+                fly.ShowAt(MyDateLook);
+                return;
+            }*/
             if (ListMyDates == null)
                 return;
             ListMyDates.Text = MainPage.VM.FindItem(sender.SelectedDates.First());

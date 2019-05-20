@@ -24,7 +24,16 @@
         </NavigationView.AutoSuggestBox>
         <NavigationView.PaneFooter >
             <RelativePanel >
-                <PersonPicture x:Name="MyPicture" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-stat" Margin="10,0,0,0" MaxHeight="55"/>
+                <PersonPicture x:Name="MyPicture" 
+                               ProfilePicture="Assets/StoreLogo.png" 
+                               Margin="10,0,0,0" 
+                               MaxHeight="55"/>
+                <Button Content="Change"
+                        Name="change"
+                        RelativePanel.Below="MyPicture"
+                        Margin="10,0,0,0"
+                        FontSize="10"
+                        Click="Change_Click"/>
                 <TextBlock Text="用户名"
                            x:Name="Client"
                            FontSize="20"
