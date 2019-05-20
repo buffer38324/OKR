@@ -50,7 +50,7 @@ namespace OkrLibrary1.ViewModels
                 }
             }
         }
-
+        
         public void SetFlag(string title)
         {
             DateTimeOffset date = DateTimeOffset.Now;
