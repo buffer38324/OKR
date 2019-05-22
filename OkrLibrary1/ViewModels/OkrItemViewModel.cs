@@ -10,7 +10,8 @@ namespace OkrLibrary1.ViewModels
         public List<OkrItem> AllOkrItems = new List<OkrItem>();
         public List<OkrItem> AllNeeds = new List<OkrItem>();
         public List<OkrItem> SevenDays = new List<OkrItem>();
-        public ClientItem clientitem = new ClientItem("icy", 2, 40, 0);
+        public ClientItem clientItem = new ClientItem("icy", 2, 40, 0);
+        int flag = 0;
         //如果是叶子节点，调用此函数把Okr任务添加到List
         public void AddOkrItems(int level, DateTimeOffset date, string title,int need)
         {
@@ -58,10 +59,20 @@ namespace OkrLibrary1.ViewModels
             foreach(OkrItem myitem in AllOkrItems)
             {
                 if (myitem.Date.Date == date.Date && myitem.Title == title)
+                {
                     myitem.Finish_flag = true;
+                    flag++;
+                }
             }
         }
 
+        public int progress_grade()
+        {
+            clientItem.Level_grade = clientItem.Level_grade + 10 * flag;
+            int grade = clientItem.Level_grade;
+            flag = 0;
+            return grade;
+        }
         //这两个函数需要改
         //返回某天的所有任务
         //返回格式还要改

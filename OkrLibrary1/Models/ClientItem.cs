@@ -20,6 +20,7 @@ namespace OkrLibrary1.Models
             this.Level_grade = 0;
         }
 
+
         public ClientItem(string name,int level,int level_grade,int Times)
         {
             //从Service中读取一个用户的构造函数

@@ -23,19 +23,22 @@ namespace Okr
         public MainPage()
         {
             this.InitializeComponent();
-            //数据共享
-            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+
+
+        //数据共享
+        DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
             dataTransferManager.DataRequested += DataTransferManager_DataRequested;
             //VM.NewSevenDaysList();
         }
+
 
         //在这放一个New的ModelView
         public static OkrItemViewModel VM = new OkrItemViewModel();
         public static string OKRPlamPageTitle;
         public static string OKRTaskPageTitle;
         public static string MyFirstTask = "";
-        public static string MySecondTask = "" ;
-        public static string MyThirdTask  = "";
+        public static string MySecondTask = "";
+        public static string MyThirdTask = "";
         public OkrItemViewModel ViewModel { get { return VM; } }
 
         /// <summary>
@@ -163,8 +166,13 @@ namespace Okr
         {
             // 创建和自定义 FileOpenPicker
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
-            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail; //可通过使用图片缩略图创建丰富的视觉显示，以显示文件选取器中的文件
+
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail; 
+            //可通过使用图片缩略图创建丰富的视觉显示，以显示文件选取器中的文件
+
             picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            //对文件夹进行筛选
+
             picker.FileTypeFilter.Add(".jpg");
             picker.FileTypeFilter.Add(".jpeg");
             picker.FileTypeFilter.Add(".png");
@@ -176,18 +184,32 @@ namespace Okr
             //文件处理
             if (file != null)
             {
+                //共享文件
                 var inputFile = SharedStorageAccessManager.AddFile(file);
-                var destination = await ApplicationData.Current.LocalFolder.CreateFileAsync("Cropped.jpg", CreationCollisionOption.ReplaceExisting);//在应用文件夹中建立文件用来存储裁剪后的图像
+
+                //在应用文件夹中建立文件用来存储裁剪后的图像
+                var destination = await ApplicationData.Current.LocalFolder.CreateFileAsync("Cropped.jpg", CreationCollisionOption.ReplaceExisting);
+                
                 var destinationFile = SharedStorageAccessManager.AddFile(destination);
+
+                //启动器选项对象的新实例
                 var options = new LauncherOptions();
+
+                //应用于启动文件或URI的目标包的包名称
                 options.TargetApplicationPackageFamilyName = "Microsoft.Windows.Photos_8wekyb3d8bbwe";
 
                 //待会要传入的参数
                 var parameters = new ValueSet();
-                parameters.Add("InputToken", inputFile);                //输入文件
-                parameters.Add("DestinationToken", destinationFile);    //输出文件
-                parameters.Add("ShowCamera", false);                    //它允许我们显示一个按钮，以允许用户采取当场图象(但是好像并没有什么卵用)
-                parameters.Add("EllipticalCrop", true);                 //截图区域显示为圆（最后截出来还是方形）
+
+                //输入文件
+                parameters.Add("InputToken", inputFile);
+                //输出文件
+                parameters.Add("DestinationToken", destinationFile);
+                //它允许我们显示一个按钮，以允许用户采取当场图象(但是好像并没有什么卵用)
+                parameters.Add("ShowCamera", false);
+                //截图区域显示为圆（最后截出来还是方形）
+
+                parameters.Add("EllipticalCrop", true);                 
                 parameters.Add("CropWidthPixals", 300);
                 parameters.Add("CropHeightPixals", 300);
 

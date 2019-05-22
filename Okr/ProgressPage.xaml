@@ -20,7 +20,7 @@
                    Text="任务进度"
                    RelativePanel.Below="ProgessPageTitle"
                    Margin="20"/>
-        <ListView x:Name="TasksList"
+            <ListView x:Name="TasksList"
                   ItemsSource="{Binding}"
                   RelativePanel.Below="Tasktitle">
             <ListView.ItemTemplate>
