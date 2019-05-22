@@ -65,7 +65,7 @@ namespace Okr
         {
             MainPage.MyFirstTask = MyFirstTask.Text;
             now_title = "";
-            Frame.Navigate(typeof(SetItemDays));
+            Frame.Navigate(typeof(SetItemDays),MyFirstTask.Text);
             now_title = MyFirstTask.Text;
             all_tasks.Add(new Task(now_title, true));
         }
@@ -73,17 +73,17 @@ namespace Okr
         private void Task2Setting_Click(object sender, RoutedEventArgs e)
         {
             MainPage.MySecondTask = MySecondTask.Text;
-            now_title = "";
-            now_title = MySecondTask.Text;
-            Frame.Navigate(typeof(SetItemDays));
+            //now_title = "";
+            //now_title = MySecondTask.Text;
+            Frame.Navigate(typeof(SetItemDays),MySecondTask.Text);
         }
 
         private void Task3Setting_Click(object sender, RoutedEventArgs e)
         {
             MainPage.MyThirdTask = MyThirdTask.Text;
-            now_title = "";
-            now_title = MyThirdTask.Text;
-            Frame.Navigate(typeof(SetItemDays));
+            //now_title = "";
+            //now_title = MyThirdTask.Text;
+            Frame.Navigate(typeof(SetItemDays),MyThirdTask.Text);
         }
 
         private void SaveTask_Click(object sender, RoutedEventArgs e)

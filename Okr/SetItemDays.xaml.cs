@@ -30,11 +30,21 @@ namespace Okr
         }
         string title = "";
         int level = 0;
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
+             string value1 = (string)e.Parameter;
+             title = value1;
+        }
+
         private void AddConfirm_Click(object sender, RoutedEventArgs e)
         {
             /*if (MyDateName.Text == "")
                 title = "Unknown";
             else title = MyDateName.Text;*/
+            if (title == "")
+                title = "Unknown";
             if(MyDateLevel.Text=="")
             {
                 Flyout fly1 = new Flyout();
@@ -73,9 +83,9 @@ namespace Okr
                 fly4.ShowAt(OptionsAllCheckBox);
                 return;
             }
-            if (OKRTaskPage.now_title == "")
+            /*if (OKRTaskPage.now_title == "")
                 title = "Unknown";
-            else title = OKRTaskPage.now_title;
+            else title = OKRTaskPage.now_title;*/
             string nlevel = MyDateLevel.Text.ToString();
             level = int.Parse(nlevel);
             int need = 0;

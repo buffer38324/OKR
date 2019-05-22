@@ -10,6 +10,7 @@ namespace OkrLibrary1.ViewModels
         public List<OkrItem> AllOkrItems = new List<OkrItem>();
         public List<OkrItem> AllNeeds = new List<OkrItem>();
         public List<OkrItem> SevenDays = new List<OkrItem>();
+        public ClientItem clientitem = new ClientItem("icy", 2, 40, 0);
         //如果是叶子节点，调用此函数把Okr任务添加到List
         public void AddOkrItems(int level, DateTimeOffset date, string title,int need)
         {
