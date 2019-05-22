@@ -5,8 +5,10 @@
     xmlns:local="using:Okr"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:OkrLibrary1.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
 
     <NavigationView x:Name="MyNavigation"  IsTabStop="False"  PaneTitle="极简菜单" 
                     IsSettingsVisible="False"  Background="#D6E8EE" IsBackButtonVisible="Collapsed"
@@ -34,26 +36,27 @@
                         Margin="10,0,0,0"
                         FontSize="10"
                         Click="Change_Click"/>
-                <TextBlock Text="用户名"
+                <TextBlock Text="icy"
                            x:Name="Client"
                            FontSize="20"
                            RelativePanel.RightOf="MyPicture"
                            HorizontalAlignment="Right"
                            Margin="20,0,10,-10"
                            />
-                <TextBlock Text="14"
+                <TextBlock Text="2"
                            FontSize="20"
                            RelativePanel.RightOf="Client"
                            />
                 <ProgressBar x:Name="PresentGrade"
                              Width="130"
-                             Value="30"
+                             Value="20"
                              VerticalAlignment="Bottom"
                              HorizontalAlignment="Right"
                              RelativePanel.RightOf="MyPicture"
                              RelativePanel.AlignRightWithPanel="True" 
                              Margin="20,0,125,-40"
                              />
+                
                 <AppBarButton x:Name="Settings" 
                               Icon="Setting"  
                               Content="设置" 
