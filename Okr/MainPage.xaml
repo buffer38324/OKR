@@ -52,7 +52,8 @@
                              HorizontalAlignment="Right"
                              RelativePanel.RightOf="MyPicture"
                              RelativePanel.AlignRightWithPanel="True" 
-                             Margin="20,0,125,-40"/>
+                             Margin="20,0,125,-40"
+                             />
                 <AppBarButton x:Name="Settings" 
                               Icon="Setting"  
                               Content="设置" 

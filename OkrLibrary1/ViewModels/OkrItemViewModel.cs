@@ -8,14 +8,15 @@ namespace OkrLibrary1.ViewModels
     public class OkrItemViewModel
     {
         public List<OkrItem> AllOkrItems = new List<OkrItem>();
-        public List<OkrItem> AllNeeds = new List<OkrItem>();
-        public List<OkrItem> SevenDays = new List<OkrItem>();
+        public List<OkrItem> AllNeeds = new List<OkrItem>();//待完成
+        public List<OkrItem> SevenDays = new List<OkrItem>();//近7天需要完成
+        ClientItem clientItem = new ClientItem("LII",2,30,0);
         //如果是叶子节点，调用此函数把Okr任务添加到List
-        public void AddOkrItems(int level, DateTimeOffset date, string title,int need)
+        public void AddOkrItems(int level, DateTimeOffset date, string title,int need)//添加最大的工程
         {
             AllOkrItems.Add(new OkrItem(level, date, title, need));
         }
-        public void AddNeedItems(string title, int need)
+        public void AddNeedItems(string title, int need)//添加需要完成的项目
         {
             AllNeeds.Add(new OkrItem(0, DateTimeOffset.Now, title, need));
         }
@@ -51,13 +52,16 @@ namespace OkrLibrary1.ViewModels
             }
         }
 
-        public void SetFlag(string title)
+        public void SetFlag(string title,ClientItem clientItem)//打卡一次任务，做一下标记
         {
             DateTimeOffset date = DateTimeOffset.Now;
             foreach(OkrItem myitem in AllOkrItems)
             {
                 if (myitem.Date.Date == date.Date && myitem.Title == title)
+                {
                     myitem.Finish_flag = true;
+                    clientItem.Level_grade = clientItem.Level_grade + 10;//对应进度条加上相应分数
+                }
             }
         }
 
@@ -79,7 +83,7 @@ namespace OkrLibrary1.ViewModels
         }
 
         //返回某一天需要完成的任务数字
-        public int FintNeed(DateTimeOffset date)
+        public int FintNeed(DateTimeOffset date)//返回需要完成的任务的数量
         {
             int need = 0;
             foreach (OkrItem myitem in AllOkrItems)
@@ -92,7 +96,7 @@ namespace OkrLibrary1.ViewModels
             return need;
         }
 
-        public int FindDone(DateTimeOffset date)
+        public int FindDone(DateTimeOffset date)//返回已完成任务的数量
         {
             int done = 0;
             foreach (OkrItem myitem in AllOkrItems)
@@ -162,14 +166,6 @@ namespace OkrLibrary1.ViewModels
                     flag = myitem.Finish_flag;
             }
             return flag;
-        }
-        public int Monitor(ClientItem clientItem)
-        {
-            //用来监测是否有任务完成
-            //实际上返回值应该为int型，但是不知道为什么返回值为int就警告
-            //当有任务完成时判断任务等级，加相应的分数
-
-            return clientItem.Level_grade;
         }
     }
 }
