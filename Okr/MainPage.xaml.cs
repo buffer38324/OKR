@@ -68,7 +68,7 @@ namespace Okr
         {
             sender.Text = args.SelectedItem.ToString();
         }
-
+        
         
 
        

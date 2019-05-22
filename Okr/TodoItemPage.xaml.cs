@@ -30,7 +30,6 @@ namespace Okr
         }
 
         
-
         private void TodoItemGrid_Loaded(object sender, RoutedEventArgs e)
         {
             DateTimeOffset today = DateTimeOffset.Now;
@@ -64,11 +63,11 @@ namespace Okr
         {
             ToggleButton ItemButton = (ToggleButton)sender;
             bool flag = MainPage.VM.JudgeFlag(ItemButton.Content.ToString());
-            if(!flag)
+            if(!flag)  //是一个还未打过卡的任务
             {
-                MainPage.VM.TaskProcessGo(ItemButton.Content.ToString());
-                MainPage.VM.SetDone(DateTimeOffset.Now);
-                MainPage.VM.SetFlag(ItemButton.Content.ToString());
+                MainPage.VM.TaskProcessGo(ItemButton.Content.ToString()); //全部需要做的次数加一
+                MainPage.VM.SetDone(DateTimeOffset.Now);  //近七天任务里做过次数加一
+                MainPage.VM.SetFlag(ItemButton.Content.ToString());  //设置已经打过卡了
             }
             else
             {

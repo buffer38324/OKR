@@ -59,7 +59,7 @@
                               MaxHeight="40"
                               HorizontalAlignment="Right" 
                               VerticalAlignment="Bottom" 
-                              RelativePanel.RightOf="MyPicture" 
+                               
                               RelativePanel.AlignRightWithPanel="True" 
                               RelativePanel.AlignBottomWithPanel="True" >
                     <AppBarButton.Flyout>

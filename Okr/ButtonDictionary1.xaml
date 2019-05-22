@@ -9,7 +9,7 @@
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBackground">
                     <GradientStop Color="#bffa7765" Offset="0.0"/>
                     <GradientStop Color="#bfd5407a" Offset="1.0"/>
-                </LinearGradientBrush>
+                </LinearGradientBrush>  <!--线性渐变颜色背景-->
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="ButtonBorderBrush">
                     <GradientStop Color="White" Offset="0.0"/>
                     <GradientStop Color="Purple" Offset="1.0"/>

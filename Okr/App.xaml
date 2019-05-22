@@ -5,17 +5,16 @@
     xmlns:local="using:Okr">
     <Application.Resources>
         <Style TargetType="TextBox" x:Key="MyTextBox">
-            <Setter Property="AutomationProperties.Name" Value="multi-line TextBox" />
+            <Setter Property="AutomationProperties.Name" Value="multi-line TextBox" /> <!--多行-->
             <Setter Property="Margin" Value="0,24,0,0"/>
             <Setter Property="MaxLength" Value="50"/>
             <Setter Property="Width" Value="400"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="AcceptsReturn" Value="true"/>
-            <Setter Property="IsSpellCheckEnabled" Value="True"/>
-            <Setter Property="SelectionHighlightColor" Value="Green"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>  <!--自动换行-->
+            <Setter Property="AcceptsReturn" Value="true"/> <!--ENTER键时文本编辑框的响应-->
+            <Setter Property="IsSpellCheckEnabled" Value="True"/>  <!--标识拼写错误-->
+            <Setter Property="SelectionHighlightColor" Value="Green"/> <!--全选时的颜色-->
         </Style>
         <Style TargetType="Button" x:Key="MyButton">
-            <Setter Property="AutomationProperties.Name" Value="Custom appearance"/>
             <Setter Property="Padding" Value="4,-3,4,-3"/>
             <Setter Property="BorderThickness" Value="1"/>
             

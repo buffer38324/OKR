@@ -44,12 +44,13 @@ namespace Okr
             ListMyDates.Text = MainPage.VM.FindItem(sender.SelectedDates.First());
         }
 
+        //设置日历上每一天的任务等级颜色
         private void MyDateLook_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs args)
         {
             //int[] myLevel = MainPage.VM.FindLevel(MyDateLook.SelectedDates.First());
             //foreach(var date in VM.AllDateTime)
             //{
-            int[] myLevel = MainPage.VM.FindLevel(args.Item.Date);
+            int[] myLevel = MainPage.VM.FindLevel(args.Item.Date);//返回一天任务的所有等级
             List<Color> densityColors = new List<Color>();
             foreach (var level in myLevel)
             {
@@ -65,7 +66,7 @@ namespace Okr
                     densityColors.Add(Colors.Blue);
                 else { }
             }
-            args.Item.SetDensityColors(densityColors);
+            args.Item.SetDensityColors(densityColors); //显示事件密度的上下文信息
             //}
         }
     }

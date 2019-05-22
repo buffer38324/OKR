@@ -39,7 +39,7 @@ namespace OkrLibrary1.ViewModels
             AddSevenDays(DateTimeOffset.Now.AddDays(-1));
             AddSevenDays(DateTimeOffset.Now);
         }
-
+        //近七天的任务里的做过次数加一
         public void SetDone(DateTimeOffset date)
         {
             foreach(OkrItem myitem in SevenDays)
@@ -50,7 +50,7 @@ namespace OkrLibrary1.ViewModels
                 }
             }
         }
-        
+        //查看今天的任务是否做完
         public void SetFlag(string title)
         {
             DateTimeOffset date = DateTimeOffset.Now;
@@ -91,7 +91,7 @@ namespace OkrLibrary1.ViewModels
             }
             return need;
         }
-
+        //返回某一天做完的任务数
         public int FindDone(DateTimeOffset date)
         {
             int done = 0;
@@ -141,7 +141,7 @@ namespace OkrLibrary1.ViewModels
             return MyLevel;
         }
 
-        //打卡调用的函数
+        //打卡调用的函数，全部需要做的任务里做过次数加一
         public void TaskProcessGo(string title)
         {
             foreach (OkrItem myitem in AllNeeds)

@@ -54,12 +54,12 @@ namespace Okr
 
         
         //这边保存的时候事件名称会出现问题
-        private void NewTask1Setting_Click(object sender, RoutedEventArgs e)
+        /*private void NewTask1Setting_Click(object sender, RoutedEventArgs e)
         {
             now_title = "";
             Frame.Navigate(typeof(SetItemDays));
             all_tasks.Add(new Task(now_title, true));
-        }
+        }*/
 
         private void Task1Setting_Click(object sender, RoutedEventArgs e)
         {
@@ -96,6 +96,7 @@ namespace Okr
                 Frame.Navigate(typeof(SetItemDays));*/
             //Frame.Navigate(typeof(SetItemDays));
         }
+        //navigate函数传参的时候调用
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             
@@ -104,7 +105,7 @@ namespace Okr
                 string value1 = (string)e.Parameter;
                 OKRTaskPageTitle.Text = value1;
             }
-            else
+            else  //防止参数为空
             {
                 OKRTaskPageTitle.Text = MainPage.OKRTaskPageTitle;
                 MyFirstTask.Text = MainPage.MyFirstTask;
