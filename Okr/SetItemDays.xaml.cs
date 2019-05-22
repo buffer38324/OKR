@@ -30,12 +30,22 @@ namespace Okr
         }
         string title = "";
         int level = 0;
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
+             string value1 = (string)e.Parameter;
+             title = value1;
+        }
+
         private void AddConfirm_Click(object sender, RoutedEventArgs e)
         {
             /*if (MyDateName.Text == "")
                 title = "Unknown";
             else title = MyDateName.Text;*/
-            if(MyDateLevel.Text=="")  //如果没填任务等级
+            if (title == "")
+                title = "Unknown";
+            if(MyDateLevel.Text=="")
             {
                 Flyout fly1 = new Flyout();
                 TextBlock fly1text = new TextBlock();
@@ -46,7 +56,7 @@ namespace Okr
             }
             if(Option1CheckBox.IsChecked==false&& Option2CheckBox.IsChecked == false && Option3CheckBox.IsChecked == false &&
                 Option4CheckBox.IsChecked == false && Option5CheckBox.IsChecked == false && Option6CheckBox.IsChecked == false &&
-                Option7CheckBox.IsChecked == false) //如果没选星期
+                Option7CheckBox.IsChecked == false)
             {
                 Flyout fly2 = new Flyout();
                 TextBlock fly2text = new TextBlock();
@@ -73,20 +83,20 @@ namespace Okr
                 fly4.ShowAt(OptionsAllCheckBox);
                 return;
             }
-            if (OKRTaskPage.now_title == "")
+            /*if (OKRTaskPage.now_title == "")
                 title = "Unknown";
-            else title = OKRTaskPage.now_title;
+            else title = OKRTaskPage.now_title;*/
             string nlevel = MyDateLevel.Text.ToString();
             level = int.Parse(nlevel);
             int need = 0;
-            if (Option1CheckBox.IsChecked == true)  //找到星期一加一
+            if (Option1CheckBox.IsChecked == true)
             {
                 DateTimeOffset today1 = BeginDate.Date;
                 while (today1 <= EndDate.Date)
                 {
                     if (today1.DayOfWeek == DayOfWeek.Monday)
                     {
-                        need++;       //找到几个星期一就加几
+                        need++;
                         today1 = today1.AddDays(7);
                     }
                     else today1 = today1.AddDays(1);
@@ -170,9 +180,9 @@ namespace Okr
                     else today1 = today1.AddDays(1);
                 }
             }
-            MainPage.VM.AddNeedItems(title, need);  
+            MainPage.VM.AddNeedItems(title, need);
             DateTimeOffset today = BeginDate.Date;
-            while (today <= EndDate.Date)   //在开始日期和结束日期之间，选中星期几的那几天的任务加进所有项目里
+            while (today <= EndDate.Date)
             {
                 if (Option1CheckBox.IsChecked == true && today.DayOfWeek == DayOfWeek.Monday)
                     MainPage.VM.AddOkrItems(level, today, title, need);
